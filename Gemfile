@@ -30,6 +30,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 
+group :development, :test do
+  gem 'faker', :require => false
+end
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
