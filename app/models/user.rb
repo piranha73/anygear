@@ -3,4 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :products # lender
+  has_many :bookings
+  # has_many :products, through: :bookings # borrower
+  def lender?
+    !self.products.size.zero?
+  end
 end
+
