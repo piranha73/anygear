@@ -9,10 +9,10 @@
 #  ---- KAT ----------
 BRANDNAMES = [
   "Advert Tech", "AgfaPhoto", "Aigo", "Bell & Howell", "BenQ", "Blackmagic Design", "Canon", "Casio",
-  "DJI", "Epson", "Foscam", "Fujifilm", "GE" , "Genius", "GoPro", "Hasselblad", "HP", "Kodak", "Leica",
-  "Lytro", "Medion", "Memoto", "Minox", "Nikon", "Olympus", "Panasonic", "Pentax", "Phase One", "Polaroid",
-  "Praktica", "Ricoh", "Rollei", "Samsung", "Sigma", "Sony", "Tevion", "Thomson", "Traveler", "Vageeswari",
-  "VisionTek", "Vivitar"
+  "DJI", "Epson", "Foscam", "Fujifilm", "GE" , "Genius", "GoPro", "Hasselblad", "HP", "Insta360", "Kodak",
+  "Leica", "Lytro", "Medion", "Memoto", "Minox", "Nikon", "Olympus", "Panasonic", "Pentax", "Phase One",
+  "Polaroid", "Praktica", "Ricoh", "Rollei", "Samsung", "Sigma", "Sony", "Tevion", "Thomson", "Traveler",
+  "Vageeswari","VisionTek", "Vivitar"
 ]
 
 puts "Creating brand names..."
