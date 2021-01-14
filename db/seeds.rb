@@ -29,17 +29,17 @@ puts "Creating 50 users"
     )
 end
 
-BRANDNAMES = [
-  "Advert Tech", "AgfaPhoto", "Aigo", "Bell & Howell", "BenQ", "Blackmagic Design", "Canon", "Casio",
-  "DJI", "Epson", "Foscam", "Fujifilm", "GE" , "Genius", "GoPro", "Hasselblad", "HP", "Insta360", "Kodak",
-  "Leica", "Lytro", "Medion", "Memoto", "Minox", "Nikon", "Olympus", "Panasonic", "Pentax", "Phase One",
-  "Polaroid", "Praktica", "Ricoh", "Rollei", "Samsung", "Sigma", "Sony", "Tevion", "Thomson", "Traveler",
-  "Vageeswari","VisionTek", "Vivitar"
-]
+# BRANDNAMES = [
+#   "Advert Tech", "AgfaPhoto", "Aigo", "Bell & Howell", "BenQ", "Blackmagic Design", "Canon", "Casio",
+#   "DJI", "Epson", "Foscam", "Fujifilm", "GE" , "Genius", "GoPro", "Hasselblad", "HP", "Insta360", "Kodak",
+#   "Leica", "Lytro", "Medion", "Memoto", "Minox", "Nikon", "Olympus", "Panasonic", "Pentax", "Phase One",
+#   "Polaroid", "Praktica", "Ricoh", "Rollei", "Samsung", "Sigma", "Sony", "Tevion", "Thomson", "Traveler",
+#   "Vageeswari","VisionTek", "Vivitar"
+# ]
 
-puts "Creating brand names..."
-BRANDNAMES.each do |brand|
-    Brand.create(name: brand)
-    puts Brand.last.name
-end
-puts "Finished Brand!"
+# puts "Creating brand names..."
+# BRANDNAMES.each do |brand|
+#     Brand.create(name: brand)
+#     puts Brand.last.name
+# end
+# puts "Finished Brand!"
