@@ -9,6 +9,7 @@
 require 'date'
 require 'faker'
 
+
 User.create(email:"lw@email.com", password: "123456", first_name:"Lily", last_name:"Walch", address:"Lech", phone_number:"+436648983164", birth_date: Date.new(2001, 1, 30), identity_number: "123456", issuance_country: "Austria")
 User.create(email:"mc@email.com", password: "123456", first_name:"Michele", last_name:"Comolli", address:"Milan", phone_number:"+393204524549", birth_date: Date.new(1998, 2, 20), identity_number: "123456", issuance_country: "Italy")
 User.create(email:"mt@email.com", password: "123456", first_name:"Michael", last_name:"Tung", address:"Venice", phone_number:"+393334443377", birth_date: Date.new(1993, 6, 22), identity_number: "123456", issuance_country: "Italy")
@@ -35,6 +36,30 @@ TRIPODNAMES = [
    "K&F"
  ]
 
+LIGHTNAMES = [
+  "Acuity Brands", "Aputure", "Bolt", "Godox", "BenQ", "Profoto", "Elinchrom", "Broncolor",
+  "Dynalite", "Luxli", "Litepanels", "Lowel", "Light & Motion" , "Westcott", "Kino Flo", "MountDog", "Esmart", "StudioFX", "ESDDI"
+]
+
+STABILISERSNAMES = [
+   "DJI", "Moza", "FeiyuTech", "Ivation", "Flycam", "Benro", "Pilotfly", "iKan",
+   "Zhiyun", "Glidecam"
+ ]
+
+CAMERA_LENSE_BRANDS = [
+    "Canon", "Fujifilm", "Hasselblad", "Nikon", "Pentax", "Sony"
+]
+
+DRONE_BRANDS = [
+  "DJI", "Yuneec", "UVify", "Hubsan", "Parrot", "Autel Robotics", "Air Hogs", "Walkera", "FreeFly",
+  "High Great Drones," "Intel", "AEE", "Ryze"
+]
+
+MOUNT_TYPES = [
+  "EF", "RF", "EF-S", "EF-M", "E", "EX", "A", "F", "S", "1", "Z", "Fuji G", "Fuji X", "Hasselblad X",
+  "Hasselblad H", "K", "Q"
+]
+
 puts "Creating tripod names..."
 TRIPODNAMES.each do |tripod|
     TripodBrand.create(name: tripod)
@@ -42,10 +67,7 @@ TRIPODNAMES.each do |tripod|
 end
 puts "Finished Tripods!"
 
-STABILISERSNAMES = [
-   "DJI", "Moza", "FeiyuTech", "Ivation", "Flycam", "Benro", "Pilotfly", "iKan",
-   "Zhiyun", "Glidecam"
- ]
+puts "..."
 
 puts "Creating stabilisers names..."
 STABILISERSNAMES.each do |stabiliser|
@@ -54,3 +76,35 @@ STABILISERSNAMES.each do |stabiliser|
 end
 puts "Finished Stabilisers!"
 
+puts "..."
+
+puts "Creating lighting brand names..."
+LIGHTNAMES.each do |light|
+    LightBrand.create(name: light)
+    puts LightBrand.last.name
+end
+puts "Finished lighting brands!"
+
+puts "..."
+
+puts "Creating camera lense brands..."
+
+CAMERA_LENSE_BRANDS.each do |brand|
+  CameraLenseBrand.create(name: brand)
+  puts CameraLenseBrand.last.name
+end
+puts "Total Count: #{CameraLenseBrand.count}"
+puts "Finished All Camera Lense Brand!"
+
+puts "..."
+
+puts "Creating drone brands..."
+
+DRONE_BRANDS.each do |brand|
+  DroneBrand.create(name: brand)
+  puts DroneBrand.last.name
+end
+puts "Total Count: #{DroneBrand.count}"
+puts "Finished All Drone Brands!"
+
+puts "..."
