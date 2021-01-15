@@ -30,6 +30,11 @@ puts "Creating 50 users"
     )
 end
 
+TRIPODNAMES = [
+   "Manfrotto", "Gitzo", "Really Right Stuff (RFS)", "Induro", "Feisol", "Oben", "Peak Design", "3 Legged Thing",
+   "Sirui", "Vanguard", "Slik", "Zomei", "Neewer" , "Benro", "MeFoto", "Joby", "Dolica", "Bonfoto", "Magnus",
+   "K&F"
+ ]
 
 CAMERA_LENSE_BRANDS = [
     "Canon", "Fujifilm", "Hasselblad", "Nikon", "Pentax", "Sony"
@@ -44,6 +49,15 @@ MOUNT_TYPES = [
   "EF", "RF", "EF-S", "EF-M", "E", "EX", "A", "F", "S", "1", "Z", "Fuji G", "Fuji X", "Hasselblad X",
   "Hasselblad H", "K", "Q"
 ]
+
+puts "Creating tripod names..."
+TRIPODNAMES.each do |tripod|
+    TripodBrand.create(name: tripod)
+    puts TripodBrand.last.name
+end
+puts "Finished Tripods!"
+
+puts "..."
 
 puts "Creating camera lense brands..."
 
