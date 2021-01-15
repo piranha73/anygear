@@ -9,6 +9,7 @@
 require 'date'
 require 'faker'
 
+
 User.create(email:"lw@email.com", password: "123456", first_name:"Lily", last_name:"Walch", address:"Lech", phone_number:"+436648983164", birth_date: Date.new(2001, 1, 30), identity_number: "123456", issuance_country: "Austria")
 User.create(email:"mc@email.com", password: "123456", first_name:"Michele", last_name:"Comolli", address:"Milan", phone_number:"+393204524549", birth_date: Date.new(1998, 2, 20), identity_number: "123456", issuance_country: "Italy")
 User.create(email:"mt@email.com", password: "123456", first_name:"Michael", last_name:"Tung", address:"Venice", phone_number:"+393334443377", birth_date: Date.new(1993, 6, 22), identity_number: "123456", issuance_country: "Italy")
@@ -53,7 +54,6 @@ MOUNT_TYPES = [
   "Hasselblad H", "K", "Q"
 ]
 
-
 puts "Creating tripod names..."
 TRIPODNAMES.each do |tripod|
     TripodBrand.create(name: tripod)
@@ -93,5 +93,3 @@ puts "Total Count: #{DroneBrand.count}"
 puts "Finished All Drone Brands!"
 
 puts "..."
-
-
