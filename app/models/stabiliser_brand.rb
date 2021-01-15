@@ -1,0 +1,2 @@
+class StabiliserBrand < ApplicationRecord
+end
