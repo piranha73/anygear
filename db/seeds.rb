@@ -29,17 +29,15 @@ puts "Creating 50 users"
     )
 end
 
-# BRANDNAMES = [
-#   "Advert Tech", "AgfaPhoto", "Aigo", "Bell & Howell", "BenQ", "Blackmagic Design", "Canon", "Casio",
-#   "DJI", "Epson", "Foscam", "Fujifilm", "GE" , "Genius", "GoPro", "Hasselblad", "HP", "Insta360", "Kodak",
-#   "Leica", "Lytro", "Medion", "Memoto", "Minox", "Nikon", "Olympus", "Panasonic", "Pentax", "Phase One",
-#   "Polaroid", "Praktica", "Ricoh", "Rollei", "Samsung", "Sigma", "Sony", "Tevion", "Thomson", "Traveler",
-#   "Vageeswari","VisionTek", "Vivitar"
-# ]
+TRIPODNAMES = [
+   "Manfrotto", "Gitzo", "Really Right Stuff (RFS)", "Induro", "Feisol", "Oben", "Peak Design", "3 Legged Thing",
+   "Sirui", "Vanguard", "Slik", "Zomei", "Neewer" , "Benro", "MeFoto", "Joby", "Dolica", "Bonfoto", "Magnus",
+   "K&F"
+ ]
 
-# puts "Creating brand names..."
-# BRANDNAMES.each do |brand|
-#     Brand.create(name: brand)
-#     puts Brand.last.name
-# end
-# puts "Finished Brand!"
+puts "Creating tripod names..."
+TRIPODNAMES.each do |tripod|
+    TripodBrand.create(name: tripod)
+    puts TripodBrand.last.name
+end
+puts "Finished Tripods!"
