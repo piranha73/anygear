@@ -1,0 +1,2 @@
+class TripodBrand < ApplicationRecord
+end
