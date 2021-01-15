@@ -41,3 +41,16 @@ TRIPODNAMES.each do |tripod|
     puts TripodBrand.last.name
 end
 puts "Finished Tripods!"
+
+STABILISERSNAMES = [
+   "DJI", "Moza", "FeiyuTech", "Ivation", "Flycam", "Benro", "Pilotfly", "iKan",
+   "Zhiyun", "Glidecam"
+ ]
+
+puts "Creating stabilisers names..."
+STABILISERSNAMES.each do |stabiliser|
+    StabiliserBrand.create(name: stabiliser)
+    puts StabiliserBrand.last.name
+end
+puts "Finished Stabilisers!"
+
