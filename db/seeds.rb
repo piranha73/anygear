@@ -55,10 +55,15 @@ DRONE_BRANDS = [
   "High Great Drones," "Intel", "AEE", "Ryze"
 ]
 
+AUDIOBRANDS = [
+  "Diety", "Rode", "Blue Yeti", "Audio-Technica", "Sennheiser", "Countryman", "Tascam"
+]
+
 MOUNT_TYPES = [
   "EF", "RF", "EF-S", "EF-M", "E", "EX", "A", "F", "S", "1", "Z", "Fuji G", "Fuji X", "Hasselblad X",
   "Hasselblad H", "K", "Q"
 ]
+
 
 puts "Creating tripod names..."
 TRIPODNAMES.each do |tripod|
@@ -108,3 +113,13 @@ puts "Total Count: #{DroneBrand.count}"
 puts "Finished All Drone Brands!"
 
 puts "..."
+
+puts "Creating audio brand names..."
+AUDIOBRANDS.each do |audio|
+    AudioBrand.create(name: audio)
+    puts AudioBrand.last.name
+end
+puts "Finished Audio Brands!"
+
+puts "..."
+
