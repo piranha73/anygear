@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 require 'date'
 require 'faker'
 
@@ -40,7 +32,7 @@ LIGHTNAMES = [
 ]
 
 CAMERA_LENSE_BRANDS = [
-    "Canon", "Fujifilm", "Hasselblad", "Nikon", "Pentax", "Sony"
+    "Arri", "Canon", "Fujifilm", "Hasselblad", "Leica", "Nikon", "Olympus", "Panasonic", "Pentax", "Samyang", "Sony"
 ]
 
 DRONE_BRANDS = [
@@ -48,10 +40,25 @@ DRONE_BRANDS = [
   "High Great Drones," "Intel", "AEE", "Ryze"
 ]
 
-MOUNT_TYPES = [
-  "EF", "RF", "EF-S", "EF-M", "E", "EX", "A", "F", "S", "1", "Z", "Fuji G", "Fuji X", "Hasselblad X",
-  "Hasselblad H", "K", "Q"
-]
+CANNON_MOUNT_TYPES = [ "EF", "RF", "EF-S", "EF-M" ]
+
+SONY_MOUNT_TYPES = [ "E", "EX", "A"]
+
+NIKON_MOUNT_TYPES = [ "F", "S", "1", "Z"]
+
+FUJI_MOUNT_TYPES = [ "Fuji G", "Fuji X" ]
+
+HASSELBLAD_MOUNT_TYPES = ["Hasselblad X", "Hasselblad H"]
+
+PENTAX_MOUNT_TYPES = ["K", "Q"]
+
+OLYMPUS_MOUNT_TYPES = [ "Pen F", "OM", "Four Thirds", "Micro Four Thirds (MFT)" ]
+
+PANASONIC_MOUNT_TYPES = [ "Micro Four Thirds (MFT)" ]
+
+LEICA_MOUNT_TYPES = ["L", "M", "R"]
+
+ARRI_MOUNT_TYPES = ["PL"]
 
 
 puts "Creating tripod names..."
@@ -94,4 +101,87 @@ puts "Finished All Drone Brands!"
 
 puts "..."
 
+puts "Creating mount types for EACH brand..."
 
+canon = CameraLenseBrand.where(name: 'Canon').first
+CANNON_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: canon.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished canon mount types"
+
+sony = CameraLenseBrand.where(name: 'Sony').first
+SONY_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: sony.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished Sony mount types"
+
+nikon = CameraLenseBrand.where(name: 'Nikon').first
+NIKON_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: nikon.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finised Nikon mount Types"
+
+fuji = CameraLenseBrand.where(name: 'Fujifilm').first
+FUJI_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: fuji.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished Fujifilm mount types"
+
+hasselblad = CameraLenseBrand.where(name: 'Hasselblad').first
+HASSELBLAD_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: hasselblad.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished Hasselblad  mount types"
+
+pentax = CameraLenseBrand.where(name: 'Pentax').first
+PENTAX_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: pentax.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished Pentax mount types"
+
+
+olympus = CameraLenseBrand.where(name: 'Olympus').first
+OLYMPUS_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: olympus.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished Olympus mount types"
+
+panasonic = CameraLenseBrand.where(name: 'Panasonic').first
+PANASONIC_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: panasonic.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished Panasonic mount types"
+
+leica = CameraLenseBrand.where(name: 'Leica').first
+LEICA_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: leica.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished Leica mount types"
+
+arri = CameraLenseBrand.where(name: 'Arri').first
+ARRI_MOUNT_TYPES.each do |mounttype|
+  MountType.create(camera_lense_brand_id: arri.id.to_i,
+                   code: mounttype)
+  puts MountType.last.code
+end
+puts "Finished Arri mount types"
+
+puts "Finished ALL MOUNT TYPES for EACH CAMERA Brand"
