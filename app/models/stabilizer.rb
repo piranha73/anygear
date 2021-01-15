@@ -1,0 +1,2 @@
+class Stabilizer < ApplicationRecord
+end
