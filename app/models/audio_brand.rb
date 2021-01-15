@@ -1,0 +1,2 @@
+class AudioBrand < ApplicationRecord
+end
