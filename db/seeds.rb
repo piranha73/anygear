@@ -29,17 +29,14 @@ puts "Creating 50 users"
     )
 end
 
-# BRANDNAMES = [
-#   "Advert Tech", "AgfaPhoto", "Aigo", "Bell & Howell", "BenQ", "Blackmagic Design", "Canon", "Casio",
-#   "DJI", "Epson", "Foscam", "Fujifilm", "GE" , "Genius", "GoPro", "Hasselblad", "HP", "Insta360", "Kodak",
-#   "Leica", "Lytro", "Medion", "Memoto", "Minox", "Nikon", "Olympus", "Panasonic", "Pentax", "Phase One",
-#   "Polaroid", "Praktica", "Ricoh", "Rollei", "Samsung", "Sigma", "Sony", "Tevion", "Thomson", "Traveler",
-#   "Vageeswari","VisionTek", "Vivitar"
-# ]
+LIGHTNAMES = [
+  "Acuity Brands", "Aputure", "Bolt", "Godox", "BenQ", "Profoto", "Elinchrom", "Broncolor",
+  "Dynalite", "Luxli", "Litepanels", "Lowel", "Light & Motion" , "Westcott", "Kino Flo", "MountDog", "Esmart", "StudioFX", "ESDDI"
+]
 
-# puts "Creating brand names..."
-# BRANDNAMES.each do |brand|
-#     Brand.create(name: brand)
-#     puts Brand.last.name
-# end
-# puts "Finished Brand!"
+puts "Creating lighting brand names..."
+LIGHTNAMES.each do |light|
+    LightBrand.create(name: light)
+    puts LightBrand.last.name
+end
+puts "Finished lighting brands!"
