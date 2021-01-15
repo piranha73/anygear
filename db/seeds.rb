@@ -39,6 +39,21 @@ LIGHTNAMES = [
   "Dynalite", "Luxli", "Litepanels", "Lowel", "Light & Motion" , "Westcott", "Kino Flo", "MountDog", "Esmart", "StudioFX", "ESDDI"
 ]
 
+CAMERA_LENSE_BRANDS = [
+    "Canon", "Fujifilm", "Hasselblad", "Nikon", "Pentax", "Sony"
+]
+
+DRONE_BRANDS = [
+  "DJI", "Yuneec", "UVify", "Hubsan", "Parrot", "Autel Robotics", "Air Hogs", "Walkera", "FreeFly",
+  "High Great Drones," "Intel", "AEE", "Ryze"
+]
+
+MOUNT_TYPES = [
+  "EF", "RF", "EF-S", "EF-M", "E", "EX", "A", "F", "S", "1", "Z", "Fuji G", "Fuji X", "Hasselblad X",
+  "Hasselblad H", "K", "Q"
+]
+
+
 puts "Creating tripod names..."
 TRIPODNAMES.each do |tripod|
     TripodBrand.create(name: tripod)
@@ -54,4 +69,29 @@ LIGHTNAMES.each do |light|
     puts LightBrand.last.name
 end
 puts "Finished lighting brands!"
+
+puts "..."
+
+puts "Creating camera lense brands..."
+
+CAMERA_LENSE_BRANDS.each do |brand|
+  CameraLenseBrand.create(name: brand)
+  puts CameraLenseBrand.last.name
+end
+puts "Total Count: #{CameraLenseBrand.count}"
+puts "Finished All Camera Lense Brand!"
+
+puts "..."
+
+puts "Creating drone brands..."
+
+DRONE_BRANDS.each do |brand|
+  DroneBrand.create(name: brand)
+  puts DroneBrand.last.name
+end
+puts "Total Count: #{DroneBrand.count}"
+puts "Finished All Drone Brands!"
+
+puts "..."
+
 
