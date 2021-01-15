@@ -1,7 +1,7 @@
 class CreateBrands < ActiveRecord::Migration[6.0]
   def change
     create_table :brands do |t|
-      t.array :product_types
+      t.string :product_types, array: true
       t.string :name
 
       t.timestamps
