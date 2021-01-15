@@ -1,0 +1,2 @@
+class DroneBrand < ApplicationRecord
+end
