@@ -1,0 +1,2 @@
+class LightBrand < ApplicationRecord
+end
