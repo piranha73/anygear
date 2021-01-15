@@ -2,6 +2,6 @@ module Reviewable
   extend ActiveSupport::Concern
 
   included do
-    has_many :reviews, :as => :reviewable
+    has_many :products, :as => :productable
   end
 end
