@@ -9,6 +9,7 @@
 require 'date'
 require 'faker'
 
+
 User.create(email:"lw@email.com", password: "123456", first_name:"Lily", last_name:"Walch", address:"Lech", phone_number:"+436648983164", birth_date: Date.new(2001, 1, 30), identity_number: "123456", issuance_country: "Austria")
 User.create(email:"mc@email.com", password: "123456", first_name:"Michele", last_name:"Comolli", address:"Milan", phone_number:"+393204524549", birth_date: Date.new(1998, 2, 20), identity_number: "123456", issuance_country: "Italy")
 User.create(email:"mt@email.com", password: "123456", first_name:"Michael", last_name:"Tung", address:"Venice", phone_number:"+393334443377", birth_date: Date.new(1993, 6, 22), identity_number: "123456", issuance_country: "Italy")
@@ -34,10 +35,16 @@ TRIPODNAMES = [
    "Sirui", "Vanguard", "Slik", "Zomei", "Neewer" , "Benro", "MeFoto", "Joby", "Dolica", "Bonfoto", "Magnus",
    "K&F"
  ]
+
 LIGHTNAMES = [
   "Acuity Brands", "Aputure", "Bolt", "Godox", "BenQ", "Profoto", "Elinchrom", "Broncolor",
   "Dynalite", "Luxli", "Litepanels", "Lowel", "Light & Motion" , "Westcott", "Kino Flo", "MountDog", "Esmart", "StudioFX", "ESDDI"
 ]
+
+STABILISERSNAMES = [
+   "DJI", "Moza", "FeiyuTech", "Ivation", "Flycam", "Benro", "Pilotfly", "iKan",
+   "Zhiyun", "Glidecam"
+ ]
 
 CAMERA_LENSE_BRANDS = [
     "Canon", "Fujifilm", "Hasselblad", "Nikon", "Pentax", "Sony"
@@ -48,13 +55,13 @@ DRONE_BRANDS = [
   "High Great Drones," "Intel", "AEE", "Ryze"
 ]
 
+AUDIOBRANDS = [
+  "Diety", "Rode", "Blue Yeti", "Audio-Technica", "Sennheiser", "Countryman", "Tascam"
+]
+
 MOUNT_TYPES = [
   "EF", "RF", "EF-S", "EF-M", "E", "EX", "A", "F", "S", "1", "Z", "Fuji G", "Fuji X", "Hasselblad X",
   "Hasselblad H", "K", "Q"
-]
-
-AUDIOBRANDS = [
-  "Diety", "Rode", "Blue Yeti", "Audio-Technica", "Sennheiser", "Countryman", "Tascam"
 ]
 
 
@@ -64,6 +71,15 @@ TRIPODNAMES.each do |tripod|
     puts TripodBrand.last.name
 end
 puts "Finished Tripods!"
+
+puts "..."
+
+puts "Creating stabilisers names..."
+STABILISERSNAMES.each do |stabiliser|
+    StabiliserBrand.create(name: stabiliser)
+    puts StabiliserBrand.last.name
+end
+puts "Finished Stabilisers!"
 
 puts "..."
 
@@ -106,5 +122,4 @@ end
 puts "Finished Audio Brands!"
 
 puts "..."
-
 
