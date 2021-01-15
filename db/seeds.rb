@@ -35,10 +35,16 @@ TRIPODNAMES = [
    "Sirui", "Vanguard", "Slik", "Zomei", "Neewer" , "Benro", "MeFoto", "Joby", "Dolica", "Bonfoto", "Magnus",
    "K&F"
  ]
+
 LIGHTNAMES = [
   "Acuity Brands", "Aputure", "Bolt", "Godox", "BenQ", "Profoto", "Elinchrom", "Broncolor",
   "Dynalite", "Luxli", "Litepanels", "Lowel", "Light & Motion" , "Westcott", "Kino Flo", "MountDog", "Esmart", "StudioFX", "ESDDI"
 ]
+
+STABILISERSNAMES = [
+   "DJI", "Moza", "FeiyuTech", "Ivation", "Flycam", "Benro", "Pilotfly", "iKan",
+   "Zhiyun", "Glidecam"
+ ]
 
 CAMERA_LENSE_BRANDS = [
     "Canon", "Fujifilm", "Hasselblad", "Nikon", "Pentax", "Sony"
@@ -60,6 +66,15 @@ TRIPODNAMES.each do |tripod|
     puts TripodBrand.last.name
 end
 puts "Finished Tripods!"
+
+puts "..."
+
+puts "Creating stabilisers names..."
+STABILISERSNAMES.each do |stabiliser|
+    StabiliserBrand.create(name: stabiliser)
+    puts StabiliserBrand.last.name
+end
+puts "Finished Stabilisers!"
 
 puts "..."
 
