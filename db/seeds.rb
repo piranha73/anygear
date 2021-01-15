@@ -72,145 +72,47 @@ LEICA_MOUNT_TYPES = ["L", "M", "R"]
 ARRI_MOUNT_TYPES = ["PL"]
 
 
-puts "Creating tripod names..."
-TRIPODNAMES.each do |tripod|
-    TripodBrand.create(name: tripod)
-    puts TripodBrand.last.name
+def create_model(model_name, constant_array, model_class)
+  puts "Creating #{model_name} names..."
+  constant_array.each do |element|
+    model_class.create(name: element)
+    puts model_class.last.name
+  end
+  puts "Finished #{model_name}s"
+
 end
-puts "Finished Tripods!"
+puts "Creating instances of all Models..."
+puts create_model('tripod', TRIPODNAMES, TripodBrand)
+puts create_model('stabilisers', STABILISERSNAMES, StabiliserBrand)
+puts create_model('lighting', LIGHTNAMES, LightBrand)
+puts create_model('camera lense', CAMERA_LENSE_BRANDS, CameraLenseBrand)
+puts create_model('drone', DRONE_BRANDS, DroneBrand)
+puts create_model('audio', AUDIOBRANDS, AudioBrand)
 
-puts "..."
-
-puts "Creating stabilisers names..."
-STABILISERSNAMES.each do |stabiliser|
-    StabiliserBrand.create(name: stabiliser)
-    puts StabiliserBrand.last.name
-end
-puts "Finished Stabilisers!"
-
-puts "..."
-
-puts "Creating lighting brand names..."
-LIGHTNAMES.each do |light|
-    LightBrand.create(name: light)
-    puts LightBrand.last.name
-end
-puts "Finished lighting brands!"
-
-puts "..."
-
-puts "Creating camera lense brands..."
-
-CAMERA_LENSE_BRANDS.each do |brand|
-  CameraLenseBrand.create(name: brand)
-  puts CameraLenseBrand.last.name
-end
-puts "Total Count: #{CameraLenseBrand.count}"
-puts "Finished All Camera Lense Brand!"
-
-puts "..."
-
-puts "Creating drone brands..."
-
-DRONE_BRANDS.each do |brand|
-  DroneBrand.create(name: brand)
-  puts DroneBrand.last.name
-end
-puts "Total Count: #{DroneBrand.count}"
-puts "Finished All Drone Brands!"
-
-puts "..."
-
-puts "Creating audio brand names..."
-AUDIOBRANDS.each do |audio|
-    AudioBrand.create(name: audio)
-    puts AudioBrand.last.name
-end
-puts "Finished Audio Brands!"
-
-puts "..."
 
 puts "Creating mount types for EACH brand..."
 
-canon = CameraLenseBrand.where(name: 'Canon').first
-CANNON_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: canon.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
+def convert_mount( name_of_brand, mounttypes_array )
+    brand = CameraLenseBrand.where(name: name_of_brand).first
+    mounttypes_array.each do |mounttype|
+      MountType.create(camera_lense_brand_id: brand.id.to_i,
+                       code: mounttype)
+      puts MountType.last.code
+    end
+    puts "Finished #{name_of_brand} mount types"
 end
-puts "Finished canon mount types"
 
-sony = CameraLenseBrand.where(name: 'Sony').first
-SONY_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: sony.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finished Sony mount types"
-
-nikon = CameraLenseBrand.where(name: 'Nikon').first
-NIKON_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: nikon.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finised Nikon mount Types"
-
-fuji = CameraLenseBrand.where(name: 'Fujifilm').first
-FUJI_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: fuji.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finished Fujifilm mount types"
-
-hasselblad = CameraLenseBrand.where(name: 'Hasselblad').first
-HASSELBLAD_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: hasselblad.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finished Hasselblad  mount types"
-
-pentax = CameraLenseBrand.where(name: 'Pentax').first
-PENTAX_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: pentax.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finished Pentax mount types"
+convert_mount('Canon', CANNON_MOUNT_TYPES )
+convert_mount('Sony', SONY_MOUNT_TYPES )
+convert_mount('Nikon', NIKON_MOUNT_TYPES )
+convert_mount('Fujifilm', FUJI_MOUNT_TYPES )
+convert_mount('Hasselblad', HASSELBLAD_MOUNT_TYPES )
+convert_mount('Pentax', PENTAX_MOUNT_TYPES )
+convert_mount('Olympus', OLYMPUS_MOUNT_TYPES )
+convert_mount('Panasonic', PANASONIC_MOUNT_TYPES )
+convert_mount('Leica', LEICA_MOUNT_TYPES )
+convert_mount('Arri', ARRI_MOUNT_TYPES )
 
 
-olympus = CameraLenseBrand.where(name: 'Olympus').first
-OLYMPUS_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: olympus.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finished Olympus mount types"
-
-panasonic = CameraLenseBrand.where(name: 'Panasonic').first
-PANASONIC_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: panasonic.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finished Panasonic mount types"
-
-leica = CameraLenseBrand.where(name: 'Leica').first
-LEICA_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: leica.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finished Leica mount types"
-
-arri = CameraLenseBrand.where(name: 'Arri').first
-ARRI_MOUNT_TYPES.each do |mounttype|
-  MountType.create(camera_lense_brand_id: arri.id.to_i,
-                   code: mounttype)
-  puts MountType.last.code
-end
-puts "Finished Arri mount types"
 
 puts "Finished ALL MOUNT TYPES for EACH CAMERA Brand"
