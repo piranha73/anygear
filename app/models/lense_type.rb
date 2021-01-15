@@ -1,0 +1,2 @@
+class LenseType < ApplicationRecord
+end
