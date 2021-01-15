@@ -22,97 +22,247 @@ puts "Creating 50 users"
     )
 end
 
-TRIPODNAMES = [
-   "Manfrotto", "Gitzo", "Really Right Stuff (RFS)", "Induro", "Feisol", "Oben", "Peak Design", "3 Legged Thing",
-   "Sirui", "Vanguard", "Slik", "Zomei", "Neewer" , "Benro", "MeFoto", "Joby", "Dolica", "Bonfoto", "Magnus",
-   "K&F"
- ]
-
-LIGHTNAMES = [
-  "Acuity Brands", "Aputure", "Bolt", "Godox", "BenQ", "Profoto", "Elinchrom", "Broncolor",
-  "Dynalite", "Luxli", "Litepanels", "Lowel", "Light & Motion" , "Westcott", "Kino Flo", "MountDog", "Esmart", "StudioFX", "ESDDI"
-]
-
-STABILISERSNAMES = [
-   "DJI", "Moza", "FeiyuTech", "Ivation", "Flycam", "Benro", "Pilotfly", "iKan",
-   "Zhiyun", "Glidecam"
- ]
-
-CAMERA_LENSE_BRANDS = [
-    "Arri", "Canon", "Fujifilm", "Hasselblad", "Leica", "Nikon", "Olympus", "Panasonic", "Pentax", "Samyang", "Sony"
-]
-
-DRONE_BRANDS = [
-  "DJI", "Yuneec", "UVify", "Hubsan", "Parrot", "Autel Robotics", "Air Hogs", "Walkera", "FreeFly",
-  "High Great Drones," "Intel", "AEE", "Ryze"
-]
-
-AUDIOBRANDS = [
-  "Diety", "Rode", "Blue Yeti", "Audio-Technica", "Sennheiser", "Countryman", "Tascam"
-]
-
-CANNON_MOUNT_TYPES = [ "EF", "RF", "EF-S", "EF-M" ]
-
-SONY_MOUNT_TYPES = [ "E", "EX", "A"]
-
-NIKON_MOUNT_TYPES = [ "F", "S", "1", "Z"]
-
-FUJI_MOUNT_TYPES = [ "Fuji G", "Fuji X" ]
-
-HASSELBLAD_MOUNT_TYPES = ["Hasselblad X", "Hasselblad H"]
-
-PENTAX_MOUNT_TYPES = ["K", "Q"]
-
-OLYMPUS_MOUNT_TYPES = [ "Pen F", "OM", "Four Thirds", "Micro Four Thirds (MFT)" ]
-
-PANASONIC_MOUNT_TYPES = [ "Micro Four Thirds (MFT)" ]
-
-LEICA_MOUNT_TYPES = ["L", "M", "R"]
-
-ARRI_MOUNT_TYPES = ["PL"]
-
-
-def create_model(model_name, constant_array, model_class)
-  puts "Creating #{model_name} names..."
-  constant_array.each do |element|
-    model_class.create(name: element)
-    puts model_class.last.name
-  end
-  puts "Finished #{model_name}s"
-
-end
-puts "Creating instances of all Models..."
-puts create_model('tripod', TRIPODNAMES, TripodBrand)
-puts create_model('stabilisers', STABILISERSNAMES, StabiliserBrand)
-puts create_model('lighting', LIGHTNAMES, LightBrand)
-puts create_model('camera lense', CAMERA_LENSE_BRANDS, CameraLenseBrand)
-puts create_model('drone', DRONE_BRANDS, DroneBrand)
-puts create_model('audio', AUDIOBRANDS, AudioBrand)
-
-
-puts "Creating mount types for EACH brand..."
-
-def convert_mount( name_of_brand, mounttypes_array )
-    brand = CameraLenseBrand.where(name: name_of_brand).first
-    mounttypes_array.each do |mounttype|
-      MountType.create(camera_lense_brand_id: brand.id.to_i,
-                       code: mounttype)
-      puts MountType.last.code
-    end
-    puts "Finished #{name_of_brand} mount types"
-end
-
-convert_mount('Canon', CANNON_MOUNT_TYPES )
-convert_mount('Sony', SONY_MOUNT_TYPES )
-convert_mount('Nikon', NIKON_MOUNT_TYPES )
-convert_mount('Fujifilm', FUJI_MOUNT_TYPES )
-convert_mount('Hasselblad', HASSELBLAD_MOUNT_TYPES )
-convert_mount('Pentax', PENTAX_MOUNT_TYPES )
-convert_mount('Olympus', OLYMPUS_MOUNT_TYPES )
-convert_mount('Panasonic', PANASONIC_MOUNT_TYPES )
-convert_mount('Leica', LEICA_MOUNT_TYPES )
-convert_mount('Arri', ARRI_MOUNT_TYPES )
-
-
-
-puts "Finished ALL MOUNT TYPES for EACH CAMERA Brand"
+BRANDS = {
+  "Arri": {
+    cameras: [],
+    lenses: [],
+    mount_types: ['PL']
+  },
+  "Canon": {
+    cameras: [],
+    lenses: [],
+    mount_types: ["EF", "RF", "EF-S", "EF-M"]
+  },
+  "DJI": {
+    cameras: [],
+    lenses: [],
+    stabilizers: [],
+  },
+  "Fujifilm": {
+    cameras: [],
+    lenses: [],
+    mount_types: [ "Fuji G", "Fuji X" ]
+  },
+  "GoPro": {
+    cameras: [],
+    lenses: [],
+  },
+  "Hasselblad": {
+    cameras: [],
+    lenses: [],
+    mount_types: ["Hasselblad X", "Hasselblad H"]
+  },
+  "Insta360": {
+    cameras: [],
+    lenses: [],
+  },
+  "Leica": {
+    cameras: [],
+    lenses: [],
+    mount_types: ["L", "M", "R"]
+  },
+  "Nikon": {
+    cameras: [],
+    lenses: [],
+    mount_types: ["F", "S", "1", "Z"]
+  },
+  "Olympus": {
+    cameras: [],
+    lenses: [],
+    mount_types: ["Pen F", "OM", "Four Thirds", "Micro Four Thirds (MFT)"]
+  },
+  "Panasonic": {
+    cameras: [],
+    lenses: [],
+    mount_types: [ "Micro Four Thirds (MFT)" ]
+  },
+  "Pentax": {
+    cameras: [],
+    lenses: [],
+    mount_types: ["K", "Q"]
+  },
+  "Sony": {
+    cameras: [],
+    lenses: [],
+    mount_types: ["E", "EX", "A"]
+  },
+  "Sigma": {
+    cameras: [],
+    lenses: [],
+  },
+  # start audio brands
+  "Diety": {
+    audios: []
+  },
+  "Rode": {
+    audios: []
+  },
+  "Blue Yeti": {
+    audios: []
+  },
+  "Audio Technica": {
+    audios: []
+  },
+  "Sennheiser": {
+    audios: []
+  },
+  "Countryman": {
+    audios: []
+  },
+  "Tascam": {
+    audios: []
+  },
+  # starts lighting brands
+  "Acuity Brands": {
+    lightings: []
+  },
+  "Aputure": {
+    lightings: []
+  },
+  "Bolt": {
+    lightings: []
+  },
+  "Godox": {
+    lightings: []
+  },
+  "Profoto": {
+    lightings: []
+  },
+  "Elinchrom": {
+    lightings: []
+  },
+  "Broncolor": {
+    lightings: []
+  },
+  "Dynalite": {
+    lightings: []
+  },
+  "Luxli": {
+    lightings: []
+  },
+  "Litepanels": {
+    lightings: []
+  },
+  "Lowel": {
+    lightings: []
+  },
+  "Light & Motion": {
+    lightings: []
+  },
+  "Westcott": {
+    lightings: []
+  },
+  "Kino Flo": {
+    lightings: []
+  },
+  "Mountdog": {
+    lightings: []
+  },
+  "Esmart": {
+    lightings: []
+  },
+  "StudiFX": {
+    lightings: []
+  },
+  "Esddi": {
+    lightings: []
+  },
+  # starts tripod
+  "Manfrotto": {
+    tripods: []
+  },
+  "Gitzo": {
+    tripods: []
+  },
+  "Really Right Stuff": {
+    tripods: []
+  },
+  "Induro": {
+    tripods: []
+  },
+  "Feisol": {
+    tripods: []
+  },
+  "Oben": {
+    tripods: []
+  },
+  "Peak Design": {
+    tripods: []
+  },
+  "3 Legged Thing": {
+    tripods: []
+  },
+  "Sirui": {
+    tripods: []
+  },
+  "Vanguard": {
+    tripods: []
+  },
+  "Slik": {
+    tripods: []
+  },
+  "Zomei": {
+    tripods: []
+  },
+  "Neewer": {
+    tripods: []
+  },
+  "Benro": {
+    tripods: []
+  },
+  "Mefoto": {
+    tripods: []
+  },
+  "Joby": {
+    tripods: []
+  },
+  "Dolica": {
+    tripods: []
+  },
+  "Bonfoto": {
+    tripods: []
+  },
+  "Magnus": {
+    tripods: []
+  },
+  "K&F": {
+    tripods: []
+  },
+  # starts stabilizers
+  "Yuneec": {
+    stabilizers: []
+  },
+ "UVify": {
+    stabilizers: []
+  },
+  "Hubsan": {
+    stabilizers: []
+  },
+  "Parrot": {
+    stabilizers: []
+  },
+  "Autel Robotics": {
+    stabilizers: []
+  },
+  "Air Hogs": {
+    stabilizers: []
+  },
+  "Walkera": {
+    stabilizers: []
+  },
+  "FreeFly": {
+    stabilizers: []
+  },
+  "High Great Drones": {
+    stabilizers: []
+  },
+  "Intel": {
+    stabilizers: []
+  },
+  "AEE": {
+    stabilizers: []
+  },
+  "Ryze": {
+    stabilizers: []
+  }
+}
