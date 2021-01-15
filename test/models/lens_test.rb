@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CameraLenseBrandTest < ActiveSupport::TestCase
+class LensTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

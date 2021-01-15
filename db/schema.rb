@@ -10,22 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_005514) do
+ActiveRecord::Schema.define(version: 2021_01_15_185537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "audio_brands", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "audios", force: :cascade do |t|
-    t.bigint "audio_brand_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["audio_brand_id"], name: "index_audios_on_audio_brand_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -34,127 +26,81 @@ ActiveRecord::Schema.define(version: 2021_01_15_005514) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "ship_to_address"
-    t.integer "total_price"
+    t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_bookings_on_product_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "camera_lense_brands", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "camera_types", force: :cascade do |t|
+  create_table "brands", force: :cascade do |t|
+    t.string "product_types", array: true
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "cameras", force: :cascade do |t|
-    t.bigint "camera_type_id", null: false
-    t.bigint "camera_lense_brand_id", null: false
-    t.string "mount_type_references"
+    t.string "camera_type"
+    t.bigint "mount_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["camera_lense_brand_id"], name: "index_cameras_on_camera_lense_brand_id"
-    t.index ["camera_type_id"], name: "index_cameras_on_camera_type_id"
-  end
-
-  create_table "drone_brands", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mount_type_id"], name: "index_cameras_on_mount_type_id"
   end
 
   create_table "drones", force: :cascade do |t|
-    t.bigint "drone_brand_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["drone_brand_id"], name: "index_drones_on_drone_brand_id"
-  end
-
-  create_table "lense_types", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "lenses", force: :cascade do |t|
-    t.bigint "camera_lense_brand_id", null: false
     t.bigint "mount_type_id", null: false
-    t.bigint "lense_type_id", null: false
+    t.string "lens_type"
     t.integer "min_focal_length"
     t.integer "max_focal_length"
     t.float "max_aperture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["camera_lense_brand_id"], name: "index_lenses_on_camera_lense_brand_id"
-    t.index ["lense_type_id"], name: "index_lenses_on_lense_type_id"
     t.index ["mount_type_id"], name: "index_lenses_on_mount_type_id"
   end
 
-  create_table "light_brands", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "lights", force: :cascade do |t|
-    t.bigint "light_brand_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["light_brand_id"], name: "index_lights_on_light_brand_id"
   end
 
   create_table "mount_types", force: :cascade do |t|
-    t.bigint "camera_lense_brand_id", null: false
+    t.bigint "brand_id", null: false
     t.string "code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["camera_lense_brand_id"], name: "index_mount_types_on_camera_lense_brand_id"
+    t.index ["brand_id"], name: "index_mount_types_on_brand_id"
   end
 
   create_table "products", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "productable_type", null: false
     t.bigint "productable_id", null: false
+    t.bigint "brand_id", null: false
     t.string "name"
     t.text "description"
     t.float "price_per_day"
     t.string "ship_from_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["productable_type", "productable_id"], name: "index_products_on_productable_type_and_productable_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
-  create_table "stabiliser_brands", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "stabilisers", force: :cascade do |t|
-    t.bigint "stabiliser_brand_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["stabiliser_brand_id"], name: "index_stabilisers_on_stabiliser_brand_id"
-  end
-
-  create_table "tripod_brands", force: :cascade do |t|
-    t.string "name"
+  create_table "stabilizers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tripods", force: :cascade do |t|
-    t.bigint "tripod_brand_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["tripod_brand_id"], name: "index_tripods_on_tripod_brand_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -176,18 +122,11 @@ ActiveRecord::Schema.define(version: 2021_01_15_005514) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "audios", "audio_brands"
   add_foreign_key "bookings", "products"
   add_foreign_key "bookings", "users"
-  add_foreign_key "cameras", "camera_lense_brands"
-  add_foreign_key "cameras", "camera_types"
-  add_foreign_key "drones", "drone_brands"
-  add_foreign_key "lenses", "camera_lense_brands"
-  add_foreign_key "lenses", "lense_types"
+  add_foreign_key "cameras", "mount_types"
   add_foreign_key "lenses", "mount_types"
-  add_foreign_key "lights", "light_brands"
-  add_foreign_key "mount_types", "camera_lense_brands"
+  add_foreign_key "mount_types", "brands"
+  add_foreign_key "products", "brands"
   add_foreign_key "products", "users"
-  add_foreign_key "stabilisers", "stabiliser_brands"
-  add_foreign_key "tripods", "tripod_brands"
 end

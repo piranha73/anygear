@@ -6,7 +6,7 @@ class CreateBookings < ActiveRecord::Migration[6.0]
       t.datetime :start_date
       t.datetime :end_date
       t.string :ship_to_address
-      t.integer :total_price
+      t.float :total_price
 
       t.timestamps
     end

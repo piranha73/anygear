@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LenseTest < ActiveSupport::TestCase
+class StabilizerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
