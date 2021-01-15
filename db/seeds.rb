@@ -34,6 +34,10 @@ TRIPODNAMES = [
    "Sirui", "Vanguard", "Slik", "Zomei", "Neewer" , "Benro", "MeFoto", "Joby", "Dolica", "Bonfoto", "Magnus",
    "K&F"
  ]
+LIGHTNAMES = [
+  "Acuity Brands", "Aputure", "Bolt", "Godox", "BenQ", "Profoto", "Elinchrom", "Broncolor",
+  "Dynalite", "Luxli", "Litepanels", "Lowel", "Light & Motion" , "Westcott", "Kino Flo", "MountDog", "Esmart", "StudioFX", "ESDDI"
+]
 
 puts "Creating tripod names..."
 TRIPODNAMES.each do |tripod|
@@ -41,3 +45,13 @@ TRIPODNAMES.each do |tripod|
     puts TripodBrand.last.name
 end
 puts "Finished Tripods!"
+
+puts "..."
+
+puts "Creating lighting brand names..."
+LIGHTNAMES.each do |light|
+    LightBrand.create(name: light)
+    puts LightBrand.last.name
+end
+puts "Finished lighting brands!"
+
