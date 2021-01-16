@@ -41,4 +41,34 @@ BRANDS.each do |key, value|
     end
   end
 
+  # product seeds
+  def create_product(product_type, brand)
+    Product.create(
+      user: User.find(rand(5..(User.all.size - 4))),
+      productable: product_type,
+      name: Faker::Movies::StarWars.vehicle,
+      description: Faker::TvShows::SiliconValley,
+      price_per_day: Faker::Number.decimal(l_digits: 2),
+      ship_from_address: Faker::Address.full_address,
+      brand: brand
+      )
+  end
+
+  SUPPORT_EQUIPMENT =  ["drones", "audios", "lightings", "stabilizers", "tripods"]
+  SUPPORT_EQUIPMENT.each do |table|
+    puts "seeding #{table.classify} products"
+    rand(10).times do
+      product_type = table.classify.create
+      brand = Brand.all.select { |brand| brand.product_types.include?(product_types) }.sample
+      create_product(product_type, brand)
+    end
+  end
+
+  rand(10).times do
+      product_type = table.classify.new
+      brand = Brand.all.select { |brand| brand.product_types.include?(product_types) }.sample
+      create_product(product_type, brand)
+    end
+
+
 end
