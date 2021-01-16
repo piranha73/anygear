@@ -1,244 +1,248 @@
 BRANDS = {
+  # camera brands
   "Arri": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: ['PL']
   },
   "Canon": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: ["EF", "RF", "EF-S", "EF-M"]
   },
   "DJI": {
-    cameras: [],
-    lenses: [],
-    stabilizers: [],
+    product_types: [:cameras, :lenses:stabilizers],
   },
   "Fujifilm": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: [ "Fuji G", "Fuji X" ]
   },
   "GoPro": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
   },
   "Hasselblad": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: ["Hasselblad X", "Hasselblad H"]
   },
   "Insta360": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
   },
   "Leica": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: ["L", "M", "R"]
   },
   "Nikon": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: ["F", "S", "1", "Z"]
   },
   "Olympus": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: ["Pen F", "OM", "Four Thirds", "Micro Four Thirds (MFT)"]
   },
   "Panasonic": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: [ "Micro Four Thirds (MFT)" ]
   },
   "Pentax": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: ["K", "Q"]
   },
   "Sony": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
     mount_types: ["E", "EX", "A"]
   },
   "Sigma": {
-    cameras: [],
-    lenses: [],
+    product_types: [:cameras, :lenses]
   },
-  # start audio brands
+
+  # audio brands
   "Diety": {
-    audios: []
+    product_types: [:audios]
   },
   "Rode": {
-    audios: []
+    product_types: [:audios]
   },
   "Blue Yeti": {
-    audios: []
+    product_types: [:audios]
   },
   "Audio Technica": {
-    audios: []
+    product_types: [:audios]
   },
   "Sennheiser": {
-    audios: []
+    product_types: [:audios]
   },
   "Countryman": {
-    audios: []
+    product_types: [:audios]
   },
   "Tascam": {
-    audios: []
+    product_types: [:audios]
   },
   # starts lighting brands
   "Acuity Brands": {
-    lightings: []
+    product_types: [:lightings]
   },
   "Aputure": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Bolt": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Godox": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Profoto": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Elinchrom": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Broncolor": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Dynalite": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Luxli": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Litepanels": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Lowel": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Light & Motion": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Westcott": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Kino Flo": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Mountdog": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Esmart": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "StudiFX": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   "Esddi": {
-    lightings: []
+    product_types: [:lightings]
+
   },
   # starts tripod
   "Manfrotto": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Gitzo": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Really Right Stuff": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Induro": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Feisol": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Oben": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Peak Design": {
-    tripods: []
+    product_types: [:tripods]
   },
   "3 Legged Thing": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Sirui": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Vanguard": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Slik": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Zomei": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Neewer": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Benro": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Mefoto": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Joby": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Dolica": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Bonfoto": {
-    tripods: []
+    product_types: [:tripods]
   },
   "Magnus": {
-    tripods: []
+    product_types: [:tripods]
   },
   "K&F": {
-    tripods: []
+    product_types: [:tripods]
   },
   # starts stabilizers
   "Yuneec": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
  "UVify": {
-    stabilizers: []
+  product_types: [:stabilizers]
   },
   "Hubsan": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "Parrot": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "Autel Robotics": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "Air Hogs": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "Walkera": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "FreeFly": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "High Great Drones": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "Intel": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "AEE": {
-    stabilizers: []
+    product_types: [:stabilizers]
   },
   "Ryze": {
-    stabilizers: []
+    product_types: [:stabilizers]
   }
 }
