@@ -1,56 +1,56 @@
 BRANDS = {
   # camera brands
   "Arri": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: ['PL']
   },
   "Canon": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: ["EF", "RF", "EF-S", "EF-M"]
   },
   "DJI": {
-    product_types: [:cameras, :lenses:stabilizers],
+    product_types: [:cameras, :drones],
   },
   "Fujifilm": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: [ "Fuji G", "Fuji X" ]
   },
   "GoPro": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
   },
   "Hasselblad": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: ["Hasselblad X", "Hasselblad H"]
   },
   "Insta360": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
   },
   "Leica": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: ["L", "M", "R"]
   },
   "Nikon": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: ["F", "S", "1", "Z"]
   },
   "Olympus": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: ["Pen F", "OM", "Four Thirds", "Micro Four Thirds (MFT)"]
   },
   "Panasonic": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: [ "Micro Four Thirds (MFT)" ]
   },
   "Pentax": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: ["K", "Q"]
   },
   "Sony": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
     mount_types: ["E", "EX", "A"]
   },
   "Sigma": {
-    product_types: [:cameras, :lenses]
+    product_types: [:cameras, :lenses],
   },
 
   # audio brands
@@ -208,41 +208,69 @@ BRANDS = {
   "K&F": {
     product_types: [:tripods]
   },
-  # starts stabilizers
-  "Yuneec": {
+  # stabilizers
+  "Moza": {
     product_types: [:stabilizers]
+  },
+    "FeiyuTech": {
+    product_types: [:stabilizers]
+  },
+    "Ivation": {
+    product_types: [:stabilizers]
+  },
+    "Flycam": {
+    product_types: [:stabilizers]
+  },
+    "Benro": {
+    product_types: [:stabilizers]
+  },
+    "Pilotifly": {
+    product_types: [:stabilizers]
+  },
+    "iKan": {
+    product_types: [:stabilizers]
+  },
+    "Zhiuyun": {
+    product_types: [:stabilizers]
+  },
+    "Glidecam": {
+    product_types: [:stabilizers]
+  },
+  # drones
+  "Yuneec": {
+    product_types: [:drones]
   },
  "UVify": {
-  product_types: [:stabilizers]
+  product_types: [:drones]
   },
   "Hubsan": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "Parrot": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "Autel Robotics": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "Air Hogs": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "Walkera": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "FreeFly": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "High Great Drones": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "Intel": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "AEE": {
-    product_types: [:stabilizers]
+    product_types: [:drones]
   },
   "Ryze": {
-    product_types: [:stabilizers]
-  }
+    product_types: [:drones]
+  },
 }
