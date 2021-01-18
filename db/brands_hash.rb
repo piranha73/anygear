@@ -188,7 +188,7 @@ BRANDS = {
     product_types: [:tripods]
   },
   "Benro": {
-    product_types: [:tripods]
+    product_types: [:tripods, :stabilizers]
   },
   "Mefoto": {
     product_types: [:tripods]
@@ -219,9 +219,6 @@ BRANDS = {
     product_types: [:stabilizers]
   },
     "Flycam": {
-    product_types: [:stabilizers]
-  },
-    "Benro": {
     product_types: [:stabilizers]
   },
     "Pilotifly": {
