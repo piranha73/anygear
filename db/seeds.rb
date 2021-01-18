@@ -43,30 +43,55 @@ BRANDS.each do |key, value|
 end
 
 # product seeds
-def create_product(product_type, brand)
+def create_product(productable, brand)
   Product.create(
     user: User.find(rand(5..(User.all.size))),
-    productable: product_type,
+    productable: productable,
     name: Faker::Movies::StarWars.vehicle,
     description: Faker::TvShows::SiliconValley,
     price_per_day: Faker::Number.decimal(l_digits: 2),
     ship_from_address: Faker::Address.full_address,
     brand: brand
-    ).errors
+    )
 end
 
 SUPPORT_EQUIPMENT =  ["drones", "audios", "lightings", "stabilizers", "tripods"]
 SUPPORT_EQUIPMENT.each do |table|
   puts "seeding #{table.classify} products"
   rand(5..10).times do
-    p product_type = table.classify.constantize.create
-    brand = Brand.all.select { |brand| brand.product_types.include?(product_type) }.sample
-    create_product(product_type, brand)
+    productable = table.classify.constantize.create
+    brand = Brand.all.select { |brand| brand.product_types.include?(table) }.sample
+    create_product(productable, brand)
   end
 end
 
-  # rand(10).times do
-  #     product_type = table.classify.new
-  #     brand = Brand.all.select { |brand| brand.product_types.include?(product_type) }.sample
-  #     create_product(product_type, brand)
-  #   end
+CAMERA_TYPES = ["DSLR", "Mirrorless", "Point & Shoot", "Action Cameras"]
+
+rand(5..10).times do
+  puts "seeding cameras"
+  camera_type = CAMERA_TYPES.sample
+  brand = Brand.all.select { |brand| brand.product_types.include?('cameras') }.sample
+  mount_type = MountType.where(brand: brand).sample
+  binding.pry
+  productable = Camera.create(camera_type: camera_type, mount_type: mount_type)
+  create_product(productable, brand)
+end
+
+LENS_TYPES = ["Zoom", "Fixed Prime"]
+
+rand(5..10).times do
+  puts "seeding cameras"
+  lens_type = LENS_TYPES.sample
+  brand = Brand.all.select { |brand| brand.product_types.include?('lenses') }.sample
+  mount_type = MountType.where(brand: brand).sample
+  min_focal_length = rand(12..70)
+  max_focal_length = rand(min_focal_length..600)
+  max_aperture = (2.8..12.3)
+  productable = Lens.create(
+    camera_type: camera_type,
+    min_focal_length: min_focal_length,
+    max_focal_length: max_focal_length,
+    max_aperture: max_aperture
+    )
+  create_product(productable, brand)
+end
