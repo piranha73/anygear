@@ -1,1 +1,59 @@
 // Specific CSS for your home-page
+.banner {
+  height: 80vh;
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740243/banner_dravqi.jpg");
+  background-size: cover;
+  h1 {
+    color: white;
+    padding-top: 35%;
+  }
+}
+
+.types {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 6vh;
+  }
+}
+
+.type {
+  margin-top: 15px;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.type--night {
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814586/landing%20page%20black%20and%20white/night_odedh1.jpg");
+}
+.type--night:hover {
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740277/night_qk9em2.jpg");
+}
+
+.type--sport {
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814408/landing%20page%20black%20and%20white/sport_iqupui.jpg");
+}
+.type--sport:hover {
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740246/sport_kqumj5.jpg");
+}
+
+.type--architecture {
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814589/landing%20page%20black%20and%20white/architecture_bhao2d.jpg");
+}
+
+.type--portrait {
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814402/landing%20page%20black%20and%20white/portrait_udt0iy.jpg");
+}
+
+.type--landscape {
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814403/landing%20page%20black%20and%20white/landscape_ut8jec.jpg");
+}
+
+.type--videography {
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814578/landing%20page%20black%20and%20white/videography_hmgdhp.jpg");
+}
