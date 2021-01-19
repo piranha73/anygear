@@ -29,13 +29,17 @@
           <li class="nav-item">
             <%= link_to "Compare", "#", class: "nav-link-right" %>
           </li>
-          <li class="nav-item nav-item__dropdown">
-            <%= link_to "profile", "#", class: "nav-link-right" %>
-            <ul>
-              <%= link_to "Messages", "#", class: "dropdown-item" %>
-              <%= link_to "Wishlist", "#", class: "dropdown-item" %>
-              <%= link_to "Account", "#", class: "dropdown-item" %>
-              <%= link_to "Logout", "#", class: "dropdown-item" %>
+          <li class="nav-item">
+            <div class="burger2">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+            <ul class="burger-links2">
+              <%= link_to "Messages", "#", class: "nav-link2" %>
+              <%= link_to "Wishlist", "#", class: "nav-link2" %>
+              <%= link_to "Account", "#", class: "nav-link2" %>
+              <%= link_to "Logout", "#", class: "nav-link2" %>
             </ul>
           </li>
         </ul>
