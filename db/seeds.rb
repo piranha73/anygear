@@ -72,23 +72,25 @@ rand(5..10).times do
   camera_type = CAMERA_TYPES.sample
   brand = Brand.all.select { |brand| brand.product_types.include?('cameras') }.sample
   mount_type = MountType.where(brand: brand).sample
-  # binding.pry
+
+  b9b0cb882bdcb8481c3c4e6579d89c48b43af0d9
   productable = Camera.create(camera_type: camera_type, mount_type: mount_type)
   create_product(productable, brand)
 end
 
-LENS_TYPES = ["Zoom", "Fixed Prime"]
+# LENS_TYPES = ["Zoom", "Fixed Prime"]
 
 rand(5..10).times do
-  puts "seeding cameras"
+  puts "seeding lenses"
   lens_type = LENS_TYPES.sample
   brand = Brand.all.select { |brand| brand.product_types.include?('lenses') }.sample
   mount_type = MountType.where(brand: brand).sample
   min_focal_length = rand(12..70)
   max_focal_length = rand(min_focal_length..600)
-  max_aperture = (2.8..12.3)
+  max_aperture = rand(2.8..12.3)
   productable = Lens.create(
-    camera_type: camera_type,
+    mount_type: mount_type,
+    lens_type: lens_type,
     min_focal_length: min_focal_length,
     max_focal_length: max_focal_length,
     max_aperture: max_aperture

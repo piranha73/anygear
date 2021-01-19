@@ -1,6 +1,7 @@
 .navbar {
   min-height: 6vh;
   background-color: black;
+  width: 100%;
 }
 
 .burger div{
@@ -27,15 +28,15 @@
   opacity: 70%;
  }
 
- .nav-link {
-  padding-top: 5px;
-  color: white;
-  opacity: 0%;
- }
+.nav-link {
+padding-top: 5px;
+color: white;
+opacity: 0%;
+}
 
- .nav-active {
-  transform: translateX(0%);
- }
+.nav-active {
+transform: translateX(0%);
+}
 
 @keyframes navLinkFade{
   from{
@@ -44,4 +45,21 @@
   to{
     opacity: 90%
   }
+}
+
+.user {
+  float: left;
+}
+
+nav ul {
+  float: left;
+}
+
+nav ul li  {
+  float: left;
+  list-style: none;
+}
+
+.nav-link-right {
+  color: white;
 }
