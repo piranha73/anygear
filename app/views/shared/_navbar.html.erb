@@ -22,21 +22,23 @@
 
     <div class="user">
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Home", "#", class: "nav-link-right" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Compare", "#", class: "nav-link-right" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag  %>
-          <ul>
-            <%= link_to "Messages", "#", class: "dropdown-item" %>
-            <%= link_to "Wishlist", "#", class: "dropdown-item" %>
-            <%= link_to "Account", "#", class: "dropdown-item" %>
-            <%= link_to "Logout", "#", class: "dropdown-item" %>
-          </ul>
-        </li>
+        <ul>
+          <li class="nav-item">
+            <%= link_to "Home", "#", class: "nav-link-right" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Compare", "#", class: "nav-link-right" %>
+          </li>
+          <li class="nav-item nav-item__dropdown">
+            <%= link_to "profile", "#", class: "nav-link-right" %>
+            <ul>
+              <%= link_to "Messages", "#", class: "dropdown-item" %>
+              <%= link_to "Wishlist", "#", class: "dropdown-item" %>
+              <%= link_to "Account", "#", class: "dropdown-item" %>
+              <%= link_to "Logout", "#", class: "dropdown-item" %>
+            </ul>
+          </li>
+        </ul>
       <% else %>
         <%= link_to "Login", new_user_session_path, class: "nav-link-right" %>
       <% end %>

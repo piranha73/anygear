@@ -48,18 +48,43 @@ transform: translateX(0%);
 }
 
 .user {
-  float: left;
+
+
 }
 
-nav ul {
-  float: left;
+ul {
+
+  list-style: none;
+  text-decoration: none;
 }
 
-nav ul li  {
+ul li {
   float: left;
   list-style: none;
+  text-decoration: none;
+  position: relative;
+}
+
+ul li ul {
+
+  position: absolute;
+  background-color: white;
 }
 
 .nav-link-right {
-  color: white;
+  // color: white;
 }
+
+.nav-item {
+  padding-right: 5px;
+}
+
+.dropdown-item {
+
+}
+
+
+
+
+
+
