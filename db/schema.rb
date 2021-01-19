@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2021_01_15_185537) do
     t.index ["mount_type_id"], name: "index_lenses_on_mount_type_id"
   end
 
-  create_table "lights", force: :cascade do |t|
+  create_table "lightings", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,4 +1,4 @@
-module Reviewable
+module Productable
   extend ActiveSupport::Concern
 
   included do
