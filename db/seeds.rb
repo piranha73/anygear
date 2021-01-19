@@ -76,7 +76,7 @@ rand(5..10).times do
   create_product(productable, brand)
 end
 
-LENS_TYPES = ["Zoom", "Fixed Prime"]
+# LENS_TYPES = ["Zoom", "Fixed Prime"]
 
 rand(5..10).times do
   puts "seeding lenses"
