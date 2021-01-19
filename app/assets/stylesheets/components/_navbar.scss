@@ -26,16 +26,16 @@
   transition: transform 0.5s ease-in;
   padding-bottom: 5px;
   opacity: 70%;
- }
+}
 
 .nav-link {
-padding-top: 5px;
-color: white;
-opacity: 0%;
+  padding-top: 5px;
+  color: white;
+  opacity: 0%;
 }
 
 .nav-active {
-transform: translateX(0%);
+  transform: translateX(0%);
 }
 
 @keyframes navLinkFade{
@@ -47,13 +47,7 @@ transform: translateX(0%);
   }
 }
 
-.user {
-
-
-}
-
 ul {
-
   list-style: none;
   text-decoration: none;
 }
@@ -62,25 +56,10 @@ ul li {
   float: left;
   list-style: none;
   text-decoration: none;
-  position: relative;
-}
-
-ul li ul {
-
-  position: absolute;
-  background-color: white;
-}
-
-.nav-link-right {
-  // color: white;
 }
 
 .nav-item {
   padding-right: 5px;
-}
-
-.dropdown-item {
-
 }
 
 
