@@ -20,18 +20,18 @@ const navSlideIn = () => {
 const avatarSlideIn = () => {
     const avatar = document.querySelector('.avatar');
     const avatarDrop = document.querySelector('.avatar-dropdown');
-    const avatarLinks = document.querySelector('.avatar-link');
+    const avatarLinks = document.querySelectorAll('.avatar-link');
 
     avatar.addEventListener('click', () => {
       avatarDrop.classList.toggle('avatar-active');
 
-  // avatarLinks.forEach((link, index) => {
-  //   if (link.style.animation) {
-  //     link.style.animation = '';
-  //   } else {
-  //     link.style.animation =`avatarLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-  //   }
-  // })
+  avatarLinks.forEach((link, index) => {
+    if (link.style.animation) {
+      link.style.animation = '';
+    } else {
+      link.style.animation =`avatarLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+    }
+  })
 });
 }
 

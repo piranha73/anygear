@@ -14,6 +14,7 @@
 .avatar {
   height: 25px;
   width: 25px;
+  color: white;
 }
 
 .burger-dropdown {
@@ -59,7 +60,7 @@
 .avatar-link {
   padding-top: 5px;
   color: white;
-  opacity: 100%;
+  opacity: 0%;
 }
 
 .burger-active {
@@ -79,14 +80,14 @@
   }
 }
 
-// @keyframes avatarLinkFade{
-//   from{
-//     opacity: 0%;
-//   }
-//   to{
-//     opacity: 90%
-//   }
-// }
+@keyframes avatarLinkFade{
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 90%
+  }
+}
 
 ul {
   list-style: none;
