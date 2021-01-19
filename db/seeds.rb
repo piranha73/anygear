@@ -72,8 +72,6 @@ rand(5..10).times do
   camera_type = CAMERA_TYPES.sample
   brand = Brand.all.select { |brand| brand.product_types.include?('cameras') }.sample
   mount_type = MountType.where(brand: brand).sample
-
-  b9b0cb882bdcb8481c3c4e6579d89c48b43af0d9
   productable = Camera.create(camera_type: camera_type, mount_type: mount_type)
   create_product(productable, brand)
 end
