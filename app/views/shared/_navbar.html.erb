@@ -22,46 +22,20 @@
 
     <div class="user">
       <% if user_signed_in? %>
-        <ul>
-          <li class="nav-item">
-            <%= link_to "Home", "#", class: "nav-link-right" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Compare", "#", class: "nav-link-right" %>
-          </li>
-          <li class="nav-item">
-<<<<<<< HEAD
-            <div class="burger">
-              <div class="line1"></div>
-              <div class="line2"></div>
-              <div class="line3"></div>
-            </div>
-            <ul class="burger-links">
-              <%= link_to "Messages", "#", class: "nav-link" %>
-              <%= link_to "Wishlist", "#", class: "nav-link" %>
-              <%= link_to "Account", "#", class: "nav-link" %>
-              <%= link_to "Logout", "#", class: "nav-link" %>
-=======
+          <%= link_to "Home", "#", class: "nav-item" %>
+          <%= link_to "Compare", "#", class: "nav-item" %>
+          <div class="nav-item">
             <div class="avatar">
               <h4>A</h4>
             </div>
             <ul class="avatar-dropdown">
-              <li>
-                <a class="avatar-link" href="#">Messages</a>
-              </li>
-              <li>
-                <a class="avatar-link" href="#">Wishlist</a>
-              </li>
-              <li>
-                <a class="avatar-link" href="#">Account</a>
-              </li>
-              <li>
-                <a class="avatar-link" href="#">Logout</a>
-              </li>
->>>>>>> 0a6f06646f81bf1bb38ae2e978640b35b2610475
+              <%= link_to "Messages", "#", class: "avatar-link" %>
+              <%= link_to "Wishlist", "#", class: "avatar-link" %>
+              <%= link_to "Account", "#", class: "avatar-link" %>
+              <%= link_to "Logout", "#", class: "avatar-link" %>
             </ul>
-          </li>
-        </ul>
+          </div>
+
       <% else %>
         <%= link_to "Login", new_user_session_path, class: "nav-link-right" %>
       <% end %>
