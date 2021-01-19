@@ -17,6 +17,7 @@ BRANDS = {
   },
   "GoPro": {
     product_types: [:cameras, :lenses],
+    mount_types: ["GoPro"]
   },
   "Hasselblad": {
     product_types: [:cameras, :lenses],
@@ -24,6 +25,7 @@ BRANDS = {
   },
   "Insta360": {
     product_types: [:cameras, :lenses],
+    mount_types: ["Insta360"]
   },
   "Leica": {
     product_types: [:cameras, :lenses],
@@ -51,6 +53,7 @@ BRANDS = {
   },
   "Sigma": {
     product_types: [:cameras, :lenses],
+    mount_types: ["Sigma"]
   },
 
   # audio brands

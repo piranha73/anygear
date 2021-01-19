@@ -67,31 +67,31 @@ end
 
 CAMERA_TYPES = ["DSLR", "Mirrorless", "Point & Shoot", "Action Cameras"]
 
-# rand(5..10).times do
-#   puts "seeding cameras"
-#   camera_type = CAMERA_TYPES.sample
-#   brand = Brand.all.select { |brand| brand.product_types.include?('cameras') }.sample
-#   mount_type = MountType.where(brand: brand).sample
-#   binding.pry
-#   productable = Camera.create(camera_type: camera_type, mount_type: mount_type)
-#   create_product(productable, brand)
-# end
+rand(5..10).times do
+  puts "seeding cameras"
+  camera_type = CAMERA_TYPES.sample
+  brand = Brand.all.select { |brand| brand.product_types.include?('cameras') }.sample
+  mount_type = MountType.where(brand: brand).sample
+  productable = Camera.create(camera_type: camera_type, mount_type: mount_type)
+  create_product(productable, brand)
+end
 
 # LENS_TYPES = ["Zoom", "Fixed Prime"]
 
-# rand(5..10).times do
-#   puts "seeding cameras"
-#   lens_type = LENS_TYPES.sample
-#   brand = Brand.all.select { |brand| brand.product_types.include?('lenses') }.sample
-#   mount_type = MountType.where(brand: brand).sample
-#   min_focal_length = rand(12..70)
-#   max_focal_length = rand(min_focal_length..600)
-#   max_aperture = (2.8..12.3)
-#   productable = Lens.create(
-#     camera_type: camera_type,
-#     min_focal_length: min_focal_length,
-#     max_focal_length: max_focal_length,
-#     max_aperture: max_aperture
-#     )
-#   create_product(productable, brand)
-# end
+rand(5..10).times do
+  puts "seeding lenses"
+  lens_type = LENS_TYPES.sample
+  brand = Brand.all.select { |brand| brand.product_types.include?('lenses') }.sample
+  mount_type = MountType.where(brand: brand).sample
+  min_focal_length = rand(12..70)
+  max_focal_length = rand(min_focal_length..600)
+  max_aperture = rand(2.8..12.3)
+  productable = Lens.create(
+    mount_type: mount_type,
+    lens_type: lens_type,
+    min_focal_length: min_focal_length,
+    max_focal_length: max_focal_length,
+    max_aperture: max_aperture
+    )
+  create_product(productable, brand)
+end
