@@ -48,7 +48,7 @@ def create_product(productable, brand)
     user: User.find(rand(5..(User.all.size))),
     productable: productable,
     name: Faker::Movies::StarWars.vehicle,
-    description: Faker::TvShows::SiliconValley,
+    description: Faker::TvShows::SiliconValley.motto,
     price_per_day: Faker::Number.decimal(l_digits: 2),
     ship_from_address: Faker::Address.full_address,
     brand: brand
