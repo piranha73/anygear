@@ -1,1 +1,33 @@
-index.html.erb
+<!-- div for sidbar nav -->
+<div class="">
+  <div class="">
+    Brands
+  </div>
+  <!-- This is where Camera Brand Names are suppose to be listed
+        but Camera and Lenses are not yet available -->
+
+  <div class="">
+    Categories
+      <!-- This is where Camera Brand Names are suppose to be listed
+        but Camera and Lenses are not yet available -->
+  </div>
+
+
+  <div class="">
+    Type Of Photography
+      <!-- This is where Camera Brand Names are suppose to be listed
+        but Camera and Lenses are not yet available -->
+  </div>
+</div>
+
+<div class="">
+      <!-- Div Container for all Product cards-->
+  <% @products.sample(8).each do |product| %>
+    <div class="">
+      <p><%= product.name %></p>
+      <p><%= product.price_per_day %>€/day</p>
+      <p> <%= product.user.first_name %> <%= product.user.last_name %></p>
+      <button><%= link_to "Product Showpage", product_path(product) %></button>
+    </div>
+  <% end %>
+</div>
