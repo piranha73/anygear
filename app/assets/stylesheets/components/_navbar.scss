@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .burger {
@@ -77,7 +78,7 @@
   list-style: none;
   color: white;
   font-family: 'Poppins', 'sans-serif';
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dropdown-menu {
