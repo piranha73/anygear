@@ -1,8 +1,9 @@
-.navbar {
+.navbar1 {
   height: 5vh;
   background-color: black;
-  //width: 100%;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 .burger {
   cursor: pointer;
@@ -117,9 +118,6 @@ ul {
   justify-content: space-between;
   width: 20%;
 }
-
-
-
 
 
 
