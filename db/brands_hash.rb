@@ -10,6 +10,7 @@ BRANDS = {
   },
   "DJI": {
     product_types: [:cameras, :drones],
+    mount_type: ["DJI"]
   },
   "Fujifilm": {
     product_types: [:cameras, :lenses],

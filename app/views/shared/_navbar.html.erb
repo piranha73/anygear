@@ -1,27 +1,121 @@
-<nav>
+
+<!-- <nav>
   <div class="navbar">
     <div class="burger">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
     </div>
-    <ul class="burger-links">
+    <ul class="burger-dropdown">
       <li>
-        <a class="nav-link" href="#">Cameras</a>
+        <a class="burger-link" href="#">Cameras</a>
       </li>
       <li>
-        <a class="nav-link" href="#">Lenses</a>
+        <a class="burger-link" href="#">Lenses</a>
       </li>
       <li>
-        <a class="nav-link" href="#">Drones</a>
+        <a class="burger-link" href="#">Drones</a>
       </li>
       <li>
-        <a class="nav-link" href="#">Support Equipment</a>
+        <a class="burger-link" href="#">Support Equipment</a>
+      </li>
+    </ul>
+
+<div class="navbar1">
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+  <ul class="burger-dropdown">
+    <li>
+      <a class="burger-link" href="#">Cameras</a>
+    </li>
+    <li>
+      <a class="burger-link" href="#">Lenses</a>
+    </li>
+    <li>
+      <a class="burger-link" href="#">Drones</a>
+    </li>
+    <li>
+      <a class="burger-link" href="#">Support Equipment</a>
+    </li>
+  </ul>
+
+
+
+  <div class="user">
+    <% if user_signed_in? %>
+
+        <%= link_to "Home", "#", class: "nav-item" %>
+        <%= link_to "Compare", "#", class: "nav-item" %>
+        <div class="nav-item">
+          <div class="avatar">
+            <h4>A</h4>
+          </div>
+          <ul class="avatar-dropdown">
+            <%= link_to "Messages", "#", class: "avatar-link" %>
+            <%= link_to "Wishlist", "#", class: "avatar-link" %>
+            <%= link_to "Account", "#", class: "avatar-link" %>
+            <%= link_to "Logout", "#", class: "avatar-link" %>
+          </ul>
+        </div>
+
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link-right" %>
+    <% end %>
+  </div>
+</div>
+
+</nav> -->
+
+
+<div class="navbar1 navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <ul class="burger-dropdown">
+      <li>
+        <a class="burger-link" href="#">Cameras</a>
+      </li>
+      <li>
+        <a class="burger-link" href="#">Lenses</a>
+      </li>
+      <li>
+        <a class="burger-link" href="#">Drones</a>
+      </li>
+      <li>
+        <a class="burger-link" href="#">Support Equipment</a>
+      </li>
+    </ul>
+
+  <!-- <button class="navbar-toggler"> type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+
+  <div class="content"> <!-- id="navbarSupportedContent" -->
+    <ul class="navbar-links">
+      <li class="nav-item">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Compare", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to "Messages", "#", class: "dropdown-item" %>
+          <%= link_to "Wishlist", "#", class: "dropdown-item" %>
+          <%= link_to "Account", "#", class: "dropdown-item" %>
+          <%= link_to "Logout", "#", class: "dropdown-item" %>
+        </div>
       </li>
     </ul>
   </div>
+</div>
 
-
-</nav>
 
 
