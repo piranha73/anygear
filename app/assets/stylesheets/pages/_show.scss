@@ -1,24 +1,114 @@
-.column1 {
-      float:left;
-      width:25%;
-      height:280px;
-      width: 33%;
+.show-page {
+  background-color: white;
+  height: 100vh;
 }
 
-.column2 {
-      float:left;
-      width:50%;
-      height:280px;
-      width: 33%;
+.product-image-div {
+  height: 40vh;
+  width: 100%;
+  padding-top: 2vh;
+  // background-color: white;
 }
 
-.column3 {
-      float:right;
-      width:25%;
-      height:280px;
-      width: 33%;
+.product-picture-placeholder {
+  height: 36vh;
+  width: 90%;
+  border: 1px solid black;
+  margin: auto;
 }
 
-h1 {
-      text-align: center;
+.info-booking-div{
+  display: flex;
+}
+
+.dates-button {
+  background-color: white;
+
+  color: black;
+  font-size: 10px;
+  border: 1px solid black;
+  padding: 3px;
+  padding-left: 25px; //PLACEHOLDER FOR DATES ICON
+  height: 30px;
+  align-content: center;
+}
+
+.info-div {
+  display: flex;
+}
+.price {
+  margin-left: 35vh;
+}
+
+.owner-picture-div {
+  height: 10vh;
+  width: 10vh;
+}
+
+.owner-picture-placeholder {
+  height: 8.5vh;
+  width: 8.5vh;
+  border: 1px solid black;
+  margin: 0.5vh;
+  margin-left: 2vh;
+}
+
+.owner-info {
+  font-size: 8px;
+  padding-top: 4.1vh;
+  width: 12vh;
+  margin-left: 1.2vh;
+  margin-top: 0.5vh;
+}
+
+.rent-button {
+  border: none;
+  background-color: #C4C4C4;
+  color: #4F4F4F;
+  height: 28px;
+  width: 100px;
+  align-content: center;
+  margin-top: 10px;
+}
+
+.renting-div {
+  margin-top: 0.5vh;
+  margin-left: 1vh;
+}
+
+.product-details {
+  margin-top: 5vh;
+  cursor: pointer;
+}
+
+.product-details p {
+  margin-left: 3vh;
+  font-size: 12px;
+  margin-bottom: 0vh;
+  margin-top: 3vh;
+}
+
+.line1 {
+  height: 1px;
+  background-color: black;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.products-specs {
+  font-size: 8px;
+}
+
+.line2 {
+  height: 1px;
+  background-color: black;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.line3 {
+  height: 1px;
+  background-color: black;
+  width: 90%;
+  margin-left: 5%;
 }
