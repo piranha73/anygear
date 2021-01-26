@@ -1,4 +1,7 @@
 
+<div class="navy">
+
+
 <!-- <nav>
   <div class="navbar">
     <div class="burger">
@@ -22,47 +25,55 @@
     </ul>
 
 <div class="navbar1">
+
   <div class="burger">
     <div class="line1"></div>
     <div class="line2"></div>
     <div class="line3"></div>
+    <ul class="burger-dropdown">
+        <li>
+          <%= link_to "Cameras", product_path("Camera"), class: "burger-link" %>
+        </li>
+        <li>
+          <%= link_to "Lenses", product_path("Lens"), class: "burger-link" %>
+        </li>
+        <li>
+          <%= link_to "Drones", product_path("Drone"), class: "burger-link" %>
+        </li>
+        <li>
+          Support Equipment
+        </li>
+          <%= link_to "Lighting", product_path("Lighting"), class: "burger-link" %>
+          <%= link_to "Audios", product_path("Audio"), class: "burger-link" %>
+          <%= link_to "Tripods", product_path("Tripod"), class: "burger-link" %>
+          <%= link_to "Stabilizers", product_path("Stabilizer"), class: "burger-link" %>
+    </ul>
   </div>
-  <ul class="burger-dropdown">
-    <li>
-      <a class="burger-link" href="#">Cameras</a>
-    </li>
-    <li>
-      <a class="burger-link" href="#">Lenses</a>
-    </li>
-    <li>
-      <a class="burger-link" href="#">Drones</a>
-    </li>
-    <li>
-      <a class="burger-link" href="#">Support Equipment</a>
-    </li>
-  </ul>
-
 
 
   <div class="user">
+    <ul>
     <% if user_signed_in? %>
 
-        <%= link_to "Home", "#", class: "nav-item" %>
-        <%= link_to "Compare", "#", class: "nav-item" %>
-        <div class="nav-item">
-          <div class="avatar">
+        <li>
+          <%= link_to "Home", "#" %>
+        </li>
+        <li>
+          <%= link_to "Compare", "#"%>
+        </li>
+        <li class="avatar">
             <h4>A</h4>
+            <div class="avatar-dropdown">
+              <%= link_to "Messages", "#", class: "avatar-link" %>
+              <%= link_to "Wishlist", "#", class: "avatar-link" %>
+              <%= link_to "Account", "#", class: "avatar-link" %>
+              <%= link_to "Logout", "#", class: "avatar-link" %>
           </div>
-          <ul class="avatar-dropdown">
-            <%= link_to "Messages", "#", class: "avatar-link" %>
-            <%= link_to "Wishlist", "#", class: "avatar-link" %>
-            <%= link_to "Account", "#", class: "avatar-link" %>
-            <%= link_to "Logout", "#", class: "avatar-link" %>
-          </ul>
-        </div>
-
+        </li>
+  </div>
+  <div class="user">
     <% else %>
-      <%= link_to "Login", new_user_session_path, class: "nav-link-right" %>
+      <%= link_to "Login", new_user_session_path %>
     <% end %>
   </div>
 </div>
