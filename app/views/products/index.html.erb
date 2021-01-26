@@ -1,33 +1,46 @@
 <!-- div for sidbar nav -->
-<div class="">
+<div class="button-filter">filter +</div>
+<div class="filter" style="display: none" >
   <div class="">
     Brands
+      <!-- This is where Camera Brand Names are supposed to be listed
+            but Camera and Lenses are not yet available -->
   </div>
-  <!-- This is where Camera Brand Names are suppose to be listed
-        but Camera and Lenses are not yet available -->
 
   <div class="">
     Categories
-      <!-- This is where Camera Brand Names are suppose to be listed
+      <!-- This is where Categories Names are supposed to be listed
         but Camera and Lenses are not yet available -->
   </div>
 
-
   <div class="">
     Type Of Photography
-      <!-- This is where Camera Brand Names are suppose to be listed
+      <!-- This is where Type of Photography Names are supposed to be listed
         but Camera and Lenses are not yet available -->
   </div>
 </div>
 
-<div class="">
+<div class="products">
       <!-- Div Container for all Product cards-->
   <% @products.sample(8).each do |product| %>
     <div class="">
       <p><%= product.name %></p>
       <p><%= product.price_per_day %>€/day</p>
       <p> <%= product.user.first_name %> <%= product.user.last_name %></p>
-      <button><%= link_to "Product Showpage", product_path(product) %></button>
+      <button><%= link_to @product.name, product_path(product) %></button>
+    <div class="card-product">
+      <div class="product-photo"><h1>Photos</h1></div>
+      <div class="product-information">
+        <div class="product-left">
+          <p><%= product.name %></p>
+          <p><%= product.user.first_name %> <%= product.user.last_name %></p> <!-- include owner rating -->
+          <p><%= product.price_per_day %>€/day</p>
+        </div>
+        <div class="product-right">
+          <h1>Product ratings</h1>  <!-- put product ratings instead with stars -->
+          <h1><%= link_to "More Info", product_path(product) %></h1>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

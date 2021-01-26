@@ -1,2 +1,24 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.button-filter {
+  width: 100vw;
+  border: none;
+  text-align: right;
+  font-size: 64%;
+  padding-right: 2%;
+  position: relative;
+}
+
+.filter {
+  // display: none;
+  position: absolute;
+  text-align: right;
+  width: 60vw;
+  height: 100%;
+  font-size: 64%;
+  padding-right: 2%;
+  background-color: $light-gray;
+  right: 0%;
+  top: 9.1%;
+}

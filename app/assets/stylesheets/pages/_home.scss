@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .banner {
-  height: 100vh;
-  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740243/banner_dravqi.jpg");
+  height: 80vh;
+  //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740243/banner_dravqi.jpg");
   background-size: cover;
   h1 {
     color: white;
@@ -73,11 +73,13 @@
   border: solid 1px;
 }
 .type--night {
-  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814586/landing%20page%20black%20and%20white/night_odedh1.jpg");
+  //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814586/landing%20page%20black%20and%20white/night_odedh1.jpg");
 }
+
 .type--sport {
-  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814408/landing%20page%20black%20and%20white/sport_iqupui.jpg");
+  //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814408/landing%20page%20black%20and%20white/sport_iqupui.jpg");
 }
+
 .type--architecture {
   //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814589/landing%20page%20black%20and%20white/architecture_bhao2d.jpg");
 }
