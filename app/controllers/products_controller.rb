@@ -11,4 +11,13 @@ class ProductsController < ApplicationController
     console
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:user_id, :name, :productable_type, :productable_id, :brand_id)
+  end
 end

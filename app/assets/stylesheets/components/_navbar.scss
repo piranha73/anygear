@@ -3,15 +3,19 @@
   background-color: black;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
 .burger {
   cursor: pointer;
+  padding-left: 1.5vh;
 }
 
 .burger div{
-  width: 25px;
-  height: 3px;
+  width: 3.8vh;
+  height: 0.45vh;
   background-color: white;
+
   margin: 5px;
 }
 
@@ -20,6 +24,7 @@
   // width: 25px;
   color: white;
   cursor: pointer;
+  margin: 0.76vh;
 }
 
 .burger-dropdown {
@@ -51,27 +56,27 @@
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
   // padding-bottom: 5px;
+
+  left: 0vh;
+  position: absolute;
+  margin-top: 25vh;
+  padding-left: 0.76vh;
+  justify-content: space-between;
+  background-color: black;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in;
+  padding-bottom: 0.76vh;
   opacity: 70%;
 }
 
 .burger-link {
-  // padding-top: 5px;
+  padding-top: 0.76vh;
   color: white;
   opacity: 0%;
   font-family: 'Poppins', 'sans-serif';
 }
 
-.avatar-link {
-  // padding-top: 5px;
-  color: white;
-  opacity: 0%;
-}
-
 .burger-active {
-  transform: translateX(0%);
-}
-
-.avatar-active {
   transform: translateX(0%);
 }
 
@@ -84,37 +89,61 @@
   }
 }
 
-@keyframes avatarLinkFade{
-  from{
-    opacity: 0%;
-  }
-  to{
-    opacity: 90%
-  }
+.navbar-lewagon {
+  justify-content: space-between;
+  background: black;
+  height: 7.61vh;
 }
 
-ul {
-  list-style: none;
-  text-decoration: none;
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
 
 .nav-item {
   // padding-right: 5px;
-  color: white;
-  opacity: 0.8;
-  font-family: 'Poppins', 'sans-serif';
+
+.navbar-lewagon .navbar-brand img {
+  width: 6vh;
 }
-.nav-item:hover {
-  text-decoration: none;
-  opacity: 1;
+
+.navbar-links {
+  display: flex;
+  list-style: none;
   color: white;
+  font-family: 'Poppins', 'sans-serif';
+  justify-content: flex-end;
+}
+
+.dropdown-menu {
+  background-color: black;
+  color: white;
+  opacity: 70%;
 }
 
 .user {
   display: flex;
   // justify-content: space-between;
   // width: 20%;
+
+.nav-link {
+  color: white;
 }
 
+.nav-link:hover {
+  color: white;
+  // font-size: 15px;
+}
 
+.dropdown-item {
+  color: white;
+}
+
+.nav-item {
+  padding-right: 1.5vh;
+}
+
+.content {
+  margin-top: 2.13vh;
+  width: 35vh;
+}
 
