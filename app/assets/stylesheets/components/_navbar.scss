@@ -15,7 +15,6 @@
   width: 3.8vh;
   height: 0.45vh;
   background-color: white;
-
   margin: 5px;
 }
 
@@ -56,7 +55,6 @@
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
   // padding-bottom: 5px;
-
   left: 0vh;
   position: absolute;
   margin-top: 25vh;
@@ -101,6 +99,7 @@
 
 .nav-item {
   // padding-right: 5px;
+}
 
 .navbar-lewagon .navbar-brand img {
   width: 6vh;
@@ -124,6 +123,7 @@
   display: flex;
   // justify-content: space-between;
   // width: 20%;
+}
 
 .nav-link {
   color: white;
