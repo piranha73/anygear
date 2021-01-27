@@ -3,19 +3,49 @@
   height: 100vh;
 }
 
-.product-image-div {
+
+.upper-div {
   height: 40vh;
-  width: 100%;
-  padding-top: 2vh;
-  // background-color: white;
+  width:  100%;
+  padding-top: 1vh;
 }
 
-.product-picture-placeholder {
-  height: 36vh;
-  width: 90%;
-  border: 1px solid black;
-  margin: auto;
+.carousel-container {
+  height: 38vh;
+  width: 100%;
+  position: relative;
+
+
 }
+
+.carousel-slide {
+  display: flex;
+  height: 37vh;
+  width: 46vh;
+
+}
+
+#prevBtn {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  cursor: pointer;
+}
+
+#nextBtn {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.carousel-slide img {
+  height: 100%;
+  width: 100%
+}
+
 
 .info-booking-div{
   display: flex;
@@ -112,3 +142,36 @@
   width: 90%;
   margin-left: 5%;
 }
+
+//.arrow1 {
+  // //-moz-transition: all 0.4s linear;
+  // // -webkit-transition: all 0.4s linear;
+  //transition: all 0.4s linear;
+//}
+
+//.arrow1.up {
+ // // -ms-transform: rotate(180deg);
+ // // -moz-transform: rotate(180deg);
+ // // -webkit-transform: rotate(180deg);
+  //transform: rotate(180deg);
+//}
+
+// .arrow2 {
+//   transform: rotate(0deg);
+//   transition: transform 1s linear;
+// }
+
+// .arrow2.up {
+//   transform: rotate(180deg);
+//   transition: transform 1s linear;
+// }
+
+// .arrow3 {
+//   transform: rotate(0deg);
+//   transition: transform 1s linear;
+// }
+
+// .arrow3.up {
+//   transform: rotate(180deg);
+//   transition: transform 1s linear;
+// }

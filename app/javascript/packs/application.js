@@ -34,6 +34,8 @@ import { navSlideIn } from '../components/navbar';
 import { productSpecs } from '../components/show';
 import { productDetails } from '../components/show';
 import { productPolicy } from '../components/show';
+import { imageCarousel } from '../components/show';
+import { rotatingArrow1 } from '../components/show';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -43,5 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   productSpecs();
   productDetails();
   productPolicy();
+  imageCarousel();
+  // rotatingArrow1();
 
 });
