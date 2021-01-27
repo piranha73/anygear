@@ -95,31 +95,3 @@ rand(5..10).times do
     )
   create_product(productable, brand)
 end
-
-#bookinds seeds
-# User.all.each do |user|
-#   puts "seeding bookings"
-#   rand(1..5).times do
-#     Booking.create(
-#     user: user.id,
-#     product: Product.all.sample,
-#     start_date: Faker::Date.between(from: '2021-01-24', to: '2021-02-14'),
-#     end_date: Faker::Date.between(from: '2021-02-15', to: '2021-02-26'),
-#     ship_to_address: Faker::Address.city,
-#     total_price: rand(35..150)
-#     )
-#   end
-# end
-
-50.times do
-  Booking.create(
-    user: User.all.sample,
-    product: Product.all.sample,
-    start_date: Faker::Date.between(from: '2021-01-24', to: '2021-02-14'),
-    end_date: Faker::Date.between(from: '2021-02-15', to: '2021-02-26'),
-    ship_to_address: Faker::Address.city,
-    total_price: rand(35..150)
-  )
-end
-
-
