@@ -1,11 +1,11 @@
-.products {
+.product {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.card-product {
+.product__card {
   width: 45vw;
   height: 45vw;
   border: solid 1px;
@@ -18,7 +18,7 @@
   }
 }
 
-.product-photo {
+.product__photo {
   width: 100%;
   height: 60%;
   border: solid 2px;
@@ -27,18 +27,18 @@
   }
 }
 
-.product-information {
+.product__information {
   display: flex;
   justify-content: space-between;
   height: 40%;
   padding: 1%;
 }
 
-.product-left {
+.product__left {
 
 }
 
-.product-right {
+.product__right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
