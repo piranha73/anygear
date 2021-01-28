@@ -30,13 +30,28 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { navSlideIn } from '../components/navbar';
+// import { avatarSlideIn } from '../components/navbar';
+import { productSpecs } from '../components/show';
+import { productDetails } from '../components/show';
+import { productPolicy } from '../components/show';
+import { imageCarousel } from '../components/show';
+
 // import { toggleSorting } from '../components/sorting';
 import { toggleSorting } from '../components/sorting';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   navSlideIn();
+
+  // avatarSlideIn();
+  productSpecs();
+  productDetails();
+  productPolicy();
+  imageCarousel();
+
   // toggleSorting();
   toggleSorting();
+
 });
