@@ -1,59 +1,92 @@
 // Specific CSS for your home-page
 .banner {
-  height: 80vh;
-  //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740243/banner_dravqi.jpg");
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740243/banner_dravqi.jpg");
   background-size: cover;
   h1 {
     color: white;
     padding-top: 35%;
   }
 }
-
 .types {
   display: flex;
   flex-direction: column;
+}
+.type {
+  margin-top: 15px;
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+.type__top {
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+  p {
+    color: white;
+    font-size: 1.2vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
   h1 {
     color: white;
     font-weight: bold;
-    font-size: 6vh;
+    font-size: 2vh;
+    text-align: left;
+    padding-left: 5vw;
+    padding-top: 5vw;
+    padding-bottom: 3vw;
   }
 }
-
-.type {
-  margin-top: 15px;
-  height: 50vh;
+.type__bottom {
+  height: 80vh;
+  width: 100%;
+  background-color: $light-gray;
+}
+.type__bottom__products {
+  h1 {
+    color: black;
+    font-weight: bold;
+    font-size: 2vh;
+    text-align: left;
+    padding-left: 5vw;
+    padding-top: 5vw;
+    padding-bottom: 3vw;
+  }
+}
+.type__bottom__cards {
+  width: 90%;
+  height: 25vh;
+  border: solid 1px;
+  margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-size: cover;
 }
-
+.type__bottom__card {
+  width: 100px;
+  height: 100px;
+  border: solid 1px;
+}
 .type--night {
-  //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814586/landing%20page%20black%20and%20white/night_odedh1.jpg");
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814586/landing%20page%20black%20and%20white/night_odedh1.jpg");
 }
-.type--night:hover {
-  //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740277/night_qk9em2.jpg");
-}
-
 .type--sport {
-  //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814408/landing%20page%20black%20and%20white/sport_iqupui.jpg");
+  background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814408/landing%20page%20black%20and%20white/sport_iqupui.jpg");
 }
-.type--sport:hover {
-  //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610740246/sport_kqumj5.jpg");
-}
-
 .type--architecture {
   //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814589/landing%20page%20black%20and%20white/architecture_bhao2d.jpg");
 }
-
 .type--portrait {
   //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814402/landing%20page%20black%20and%20white/portrait_udt0iy.jpg");
 }
-
 .type--landscape {
   //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814403/landing%20page%20black%20and%20white/landscape_ut8jec.jpg");
 }
-
 .type--videography {
   //background-image: url("https://res.cloudinary.com/dq5tsbkvy/image/upload/v1610814578/landing%20page%20black%20and%20white/videography_hmgdhp.jpg");
 }
