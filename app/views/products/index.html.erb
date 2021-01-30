@@ -1,41 +1,44 @@
 <!-- div for sidbar nav -->
 <div class="button-filter">filter +</div>
-<div class="filter" style="display: none" >
-  <div class="filter__category">
-    Brands
-      <!-- This is where Camera Brand Names are supposed to be listed
-            but Camera and Lenses are not yet available -->
-  </div>
+<div class="index">
 
-  <div class="">
-    Categories
-      <!-- This is where Categories Names are supposed to be listed
-        but Camera and Lenses are not yet available -->
-  </div>
-
-  <div class="">
-    Type Of Photography
-      <!-- This is where Type of Photography Names are supposed to be listed
-        but Camera and Lenses are not yet available -->
-  </div>
-</div>
-
-<div class="product">
-      <!-- Div Container for all Product cards-->
-  <% @products.sample(8).each do |product| %>
-    <div class="product__card">
-      <div class="product__photo"><h1>Photos</h1></div>
-      <div class="product__information">
-        <div class="product__left">
-          <p><%= product.name %></p>
-          <p><%= product.user.first_name %> <%= product.user.last_name %></p> <!-- include owner rating -->
-          <p><%= product.price_per_day %>€/day</p>
-        </div>
-        <div class="product__right">
-          <h1>Product ratings</h1>  <!-- put product ratings instead with stars -->
-          <h1><%= link_to "More Info", product_path(product) %></h1>
+  <div class="product">
+        <!-- Div Container for all Product cards-->
+    <% @products.sample(8).each do |product| %>
+      <div class="product__card">
+        <div class="product__photo"><h1>Photos</h1></div>
+        <div class="product__information">
+          <div class="product__left">
+            <p><%= product.name %></p>
+            <p><%= product.user.first_name %> <%= product.user.last_name %></p> <!-- include owner rating -->
+            <p><%= product.price_per_day %>€/day</p>
+          </div>
+          <div class="product__right">
+            <h1>Product ratings</h1>  <!-- put product ratings instead with stars -->
+            <h1><%= link_to "More Info", product_path(product) %></h1>
+          </div>
         </div>
       </div>
+    <% end %>
+  </div>
+
+  <div class="filter" style="" >
+    <div class="filter__category">
+      <h1>Brands</h1>
+        <!-- This is where Camera Brand Names are supposed to be listed
+              but Camera and Lenses are not yet available -->
     </div>
-  <% end %>
+
+    <div class="">
+      <h1>Categories</h1>
+        <!-- This is where Categories Names are supposed to be listed
+          but Camera and Lenses are not yet available -->
+    </div>
+
+    <div class="">
+      <h1>Type Of Photography</h1>
+        <!-- This is where Type of Photography Names are supposed to be listed
+          but Camera and Lenses are not yet available -->
+    </div>
+  </div>
 </div>
