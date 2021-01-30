@@ -1,0 +1,7 @@
+<% @cameras.each do |camera| %>
+<p>Cloudinary does not exist yet</p>
+<p><%= camera.brand.name %></p>
+<p><%= camera.name %></p>
+<p><%= camera.price_per_day %>€/day</p>
+<p><%= link_to "More Info", product_path(camera) %></p>
+<% end %>

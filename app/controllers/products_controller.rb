@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
     @lightings = Product.where(productable_type: 'Lighting')
     @stabilizers = Product.where(productable_type: 'Stabilizer')
     @tripods = Product.where(productable_type: 'Tripod')
+    @cameras = Product.where(productable_type: 'Camera')
+    @lenses = Product.where(productable_type: 'Lens')
     console
   end
 
