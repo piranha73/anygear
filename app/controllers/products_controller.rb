@@ -2,13 +2,14 @@ class ProductsController < ApplicationController
    skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @products = Product.all
+    # raise
+    console
+    @products = Product.where(productable_type: params[:productable_type])
     @drones = Product.where(productable_type: 'Drone')
     @audios = Product.where(productable_type: 'Audio')
     @lightings = Product.where(productable_type: 'Lighting')
     @stabilizers = Product.where(productable_type: 'Stabilizer')
     @tripods = Product.where(productable_type: 'Tripod')
-    console
   end
 
   def show

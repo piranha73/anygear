@@ -6,10 +6,10 @@
     </div>
     <ul class="navbar1__burger-dropdown">
       <li>
-        <a class="navbar1__burger-link" href="#">Cameras</a>
+        <%= link_to "Cameras", products_path(:productable_type => 'Camera')%>
       </li>
       <li>
-        <a class="navbar1__burger-link" href="#">Lenses</a>
+        <%= link_to "Lenses", products_path(:productable_type => 'Lens')%>
       </li>
       <li>
         <a class="navbar1__burger-link" href="#">Drones</a>
