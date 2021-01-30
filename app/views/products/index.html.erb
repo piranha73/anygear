@@ -4,11 +4,12 @@
 
   <div class="product">
         <!-- Div Container for all Product cards-->
-    <% @products.sample(8).each do |product| %>
+    <% @products.each do |product| %>
       <div class="product__card">
         <div class="product__photo"><h1>Photos</h1></div>
         <div class="product__information">
           <div class="product__left">
+            <p><%= product.brand.name %></p>
             <p><%= product.name %></p>
             <p><%= product.user.first_name %> <%= product.user.last_name %></p> <!-- include owner rating -->
             <p><%= product.price_per_day %>€/day</p>
@@ -24,9 +25,13 @@
 
   <div class="filter" style="" >
     <div class="filter__category">
-      <h1>Brands</h1>
-        <!-- This is where Camera Brand Names are supposed to be listed
-              but Camera and Lenses are not yet available -->
+      Brands
+        <% if params[:productable_type] == 'Camera' %>
+          <% @brands = Brand.all.select {|brand| brand.product_types.include?('cameras')} %>
+            <% @brands.each do |brand| %>
+                <p><%= link_to brand.name, products_path(productable_type: 'Camera', brand: brand) %></p>
+            <% end %>
+        <% end %>
     </div>
 
     <div class="">
