@@ -15,7 +15,7 @@
         <%= link_to "Drones", products_path(:productable_type => 'Drone')%>
       </li>
       <li>
-        <%= link_to "Support Equipment", products_path = { :productable_type => 'Audio', :productable_type => 'Lighting', :productable_type => 'Stabilizer', :productable_type => 'Tripod' }%>
+        <%= link_to "Support Equipment", products_path(:productable_type => ['Audio', 'Lighting', 'Stabilizer', 'Tripod']) %>
       </li>
     </ul>
 

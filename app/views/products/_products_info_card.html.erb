@@ -1,0 +1,15 @@
+<div class="product__photo">
+  <h1>Photos</h1>
+</div>
+<div class="product__information">
+  <div class="product__left">
+    <p><%= product.brand.name %></p>
+    <p><%= product.name %></p>
+    <p><%= product.user.first_name %> <%= product.user.last_name %></p> <!-- include owner rating -->
+    <p><%= product.price_per_day %>€/day</p>
+  </div>
+  <div class="product__right">
+    <h1>Product ratings</h1>  <!-- put product ratings instead with stars -->
+    <h1><%= link_to "More Info", product_path(product) %></h1>
+  </div>
+</div>

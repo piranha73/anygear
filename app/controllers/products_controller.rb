@@ -3,7 +3,16 @@ class ProductsController < ApplicationController
 
   def index
     console
-    @products = Product.where(productable_type: params[:productable_type])
+    if params[:brand_id].present?
+      @products = Product.where(productable_type: params[:productable_type], brand: params[:brand_id])
+      # respond_to do |format|
+      #      format.js { render template: 'products/update_products' }
+      # end
+    elsif params[:productable_type].present?
+      @products = Product.where(productable_type: params[:productable_type])
+    else
+      @products = Product.all
+    end
   end
 
   def show
