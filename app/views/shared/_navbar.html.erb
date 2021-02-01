@@ -6,16 +6,16 @@
     </div>
     <ul class="navbar1__burger-dropdown">
       <li>
-        <a class="navbar1__burger-link" href="#">Cameras</a>
+        <%= link_to "Cameras", products_path(:productable_type => 'Camera')%>
       </li>
       <li>
-        <a class="navbar1__burger-link" href="#">Lenses</a>
+        <%= link_to "Lenses", products_path(:productable_type => 'Lens')%>
       </li>
       <li>
-        <a class="navbar1__burger-link" href="#">Drones</a>
+        <%= link_to "Drones", products_path(:productable_type => 'Drone')%>
       </li>
       <li>
-        <a class="navbar1__burger-link" href="#">Support Equipment</a>
+        <%= link_to "Support Equipment", products_path(:productable_type => ['Audio', 'Lighting', 'Stabilizer', 'Tripod']) %>
       </li>
     </ul>
 
