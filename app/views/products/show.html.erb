@@ -73,5 +73,11 @@
   </div>
 </div>
 
+<% if @product.user != current_user%>
+  <%= link_to "Book", new_product_booking_path(@product), class: 'btn btn-success' %>
+<% else %>
+  <%= link_to "My products" ,user_products_path, class: "btn btn-primary"%>
+<% end %>
+
 
 
