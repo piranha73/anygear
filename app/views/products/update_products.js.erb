@@ -1,1 +1,1 @@
-document.querySelector(`#products-render[data-product='<%= @product.id %>']`).innerHTML = `<%= render partial: 'products/products_info_card', locals: {product: @product, brand: @product.brand, page: 'products'} %>`
+document.querySelector(`#products-render[data-product='<%= @product.id %>']`).innerHTML = `<%= render partial: 'products/products_info_card', locals: {product: @product, page: 'products'} %>`
