@@ -7,9 +7,9 @@
     <div class="product">
           <!-- Div Container for all Product cards-->
       <% @products.each do |product| %>
-        <div data-product="<%= product.id %>" id="products-render"class="product__card">
+        <div data-product="<%= product.id %>" id="products-render" class="product__card">
 
-           <%= render partial: 'products/products_info_card', locals: {product: product, brand: product.brand, page: 'products'} %>
+           <%= render partial: 'products/products_info_card', locals: {product: product, page: 'products'} %>
 
         </div>
       <% end %>
@@ -21,35 +21,28 @@
     <div class="filter__category">
       Brands
         <% if params[:productable_type] == 'Camera' %>
-          <% @brands = Brand.all.select {|brand| brand.product_types.include?('cameras')} %>
-            <% @brands.each do |brand| %>
-                <p><%= link_to brand.name, products_path(:productable_type => 'Camera', :brand_id => brand),
+            <p><% Brand.special_select('cameras', 'Camera') do |brand, productable_type| %>
+              <%= link_to brand.name, products_path(:productable_type => productable_type, :brand_id => brand),
                         page: 'products',
-                        # remote: true,
                         method: :get %></p>
             <% end %>
         <% elsif params[:productable_type] == 'Lens'  %>
-          <% @brands = Brand.all.select {|brand| brand.product_types.include?('lenses')} %>
-            <% @brands.each do |brand| %>
-                <p><%= link_to brand.name, products_path(:productable_type => 'Lens', :brand_id => brand),
+            <p><% Brand.special_select('lenses', 'Lens') do |brand, productable_type| %>
+              <%= link_to brand.name, products_path(:productable_type => productable_type, :brand_id => brand),
                         page: 'products',
-                        # remote: true,
                         method: :get %></p>
             <% end %>
         <% elsif params[:productable_type] == 'Drone'  %>
-            <% @brands = Brand.all.select {|brand| brand.product_types.include?('drones')} %>
-            <% @brands.each do |brand| %>
-                <p><%= link_to brand.name, products_path(:productable_type => 'Drone', :brand_id => brand),
+            <p><% Brand.special_select('drones', 'Drone') do |brand, productable_type| %>
+              <%= link_to brand.name, products_path(:productable_type => productable_type, :brand_id => brand),
                         page: 'products',
-                        # remote: true,
                         method: :get %></p>
             <% end %>
         <% else %>
           <% @brands = Brand.all.select {|brand| brand.product_types.any? { |type| ['audios', 'lightings', 'tripods', 'stabilizers'].include? type } }%>
-          <% @brands.each do |brand| %>
+            <% @brands.each do |brand| %>
                 <p><%= link_to brand.name, products_path(:productable_type => ['Audio', 'Lighting', 'Stabilizer', 'Tripod'], :brand_id => brand),
                         page: 'products',
-                        # remote: true,
                         method: :get %></p>
             <% end %>
         <% end %>

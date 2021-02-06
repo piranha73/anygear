@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
-   skip_before_action :authenticate_user!, only: [ :index ]
+   skip_before_action :authenticate_user!, only: [:index]
 
   def index
     console
     if params[:brand_id].present?
       @products = Product.where(productable_type: params[:productable_type], brand: params[:brand_id])
       # respond_to do |format|
-      #      format.js { render template: 'products/update_products' }
+      #   format.js { render template: 'products/update_products' }
       # end
     elsif params[:productable_type].present?
       @products = Product.where(productable_type: params[:productable_type])
